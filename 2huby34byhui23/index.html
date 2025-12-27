@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Oferta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e1e1e1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .screen {
+            display: none;
+            padding: 32px 24px;
+        }
+        
+        .screen.active {
+            display: block;
+        }
+        
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 28px;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+        
+        .message {
+            text-align: center;
+            color: #595959;
+            margin-bottom: 28px;
+            font-size: 17px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+        
+        /* ESTOQUE */
+        .stock {
+            background: linear-gradient(135deg, #FF3333 0%, #FF6666 100%);
+            color: white;
+            padding: 14px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 24px 0;
+            font-weight: 700;
+            font-size: 17px;
+            letter-spacing: -0.2px;
+            box-shadow: 0 4px 12px rgba(255, 51, 51, 0.2);
+            border: 2px solid #FF0000;
+        }
+        
+        /* BOTÃO */
+        .btn-continuar {
+            width: 100%;
+            padding: 17px;
+            background: linear-gradient(135deg, #00CC00 0%, #00AA00 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.2px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 204, 0, 0.2);
+        }
+        
+        .btn-continuar:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+        
+        .input-container {
+            margin-bottom: 24px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 16px 18px;
+            margin-bottom: 8px;
+            border: 2px solid #e1e1e1;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #000000;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #00CC00;
+        }
+        
+        .error-message {
+            color: #FF3333;
+            font-size: 14px;
+            display: none;
+            font-weight: 500;
+        }
+        
+        .loading-bar {
+            width: 100%;
+            height: 6px;
+            background: #f0f0f0;
+            border-radius: 3px;
+            margin: 24px 0;
+            overflow: hidden;
+        }
+        
+        .loading-progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #FF0050 0%, #00F2EA 100%);
+            border-radius: 3px;
+            transition: width 0.3s;
+        }
+        
+        .percentage {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #FF0050;
+            margin: 12px 0;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.5px;
+        }
+        
+        .loading-text {
+            text-align: center;
+            color: #666666;
+            font-size: 15px;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 14px;
+                max-width: 100%;
+            }
+            
+            .screen {
+                padding: 28px 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            h2 {
+                font-size: 22px;
+            }
+            
+            .message {
+                font-size: 16px;
+            }
+            
+            .stock {
+                font-size: 16px;
+                padding: 13px;
+            }
+            
+            .btn-continuar {
+                padding: 16px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            h1 {
+                font-size: 26px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            .message {
+                font-size: 15px;
+            }
+            
+            .screen {
+                padding: 24px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Tela 1: Presell -->
+        <div class="screen active" id="screen1">
+            <h1>Parabéns!</h1>
+            <div class="message">
+                Você concluiu todas as etapas disponíveis no momento!
+            </div>
+            <div class="stock">Últimas 19 vagas disponíveis!</div>
+            <button class="btn-continuar" onclick="nextScreen(2)">Continuar</button>
+        </div>
+        
+        <!-- Tela 2: Nome -->
+        <div class="screen" id="screen2">
+            <h2>Qual o seu nome?</h2>
+            <div class="input-container">
+                <input type="text" id="userName" placeholder="Digite seu nome">
+                <div class="error-message" id="nameError">O nome deve ter mais de 3 letras</div>
+            </div>
+            <button class="btn-continuar" onclick="validateName()">Continuar</button>
+        </div>
+        
+        <!-- Tela 3: Idade -->
+        <div class="screen" id="screen3">
+            <h2>Qual a sua idade?</h2>
+            <div class="input-container">
+                <input type="number" id="userAge" placeholder="Digite sua idade" min="1" max="120">
+                <div class="error-message" id="ageError">A idade mínima permitida é 6 anos</div>
+            </div>
+            <button class="btn-continuar" onclick="validateAge()">Continuar</button>
+        </div>
+        
+        <!-- Tela 4: Loading -->
+        <div class="screen" id="screen4">
+            <h2>Aguarde um momento</h2>
+            <div class="message">
+                Você está sendo redirecionado(a) para etapa final do processo!
+            </div>
+            <div class="percentage" id="percentage">0%</div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+            <div class="loading-text" id="loadingText">Iniciando...</div>
+        </div>
+    </div>
+
+    <script>
+        const encodedBaseUrl = "aHR0cHM6Ly9ibGFja2RvdGlrMTEuc2hvcC90aWsvcG9udG9zL2JhY2tyZWRpcmVjdC8=";
+        
+        // Coleção de parâmetros ORIGINAIS
+        let originalParams = new URLSearchParams();
+        
+        // Coletar TODOS os parâmetros da URL atual
+        function collectOriginalParams() {
+            const currentUrl = new URL(window.location.href);
+            const params = new URLSearchParams(currentUrl.search);
+            
+            // Copiar todos os parâmetros ORIGINAIS
+            for (const [key, value] of params.entries()) {
+                originalParams.set(key, value);
+            }
+            
+            console.log('Parâmetros TikTok coletados:', Array.from(originalParams.entries()));
+        }
+        
+        // Gerar URL final APENAS com os parâmetros originais
+        function generateFinalUrl() {
+            const baseUrl = atob(encodedBaseUrl);
+            
+            // Se não houver parâmetros, retorna a URL base
+            if (originalParams.toString() === '') {
+                return baseUrl;
+            }
+            
+            // Retorna URL com TODOS os parâmetros originais
+            return `${baseUrl}?${originalParams.toString()}`;
+        }
+        
+        // Coletar dados do usuário (apenas para validação)
+        let userName = '';
+        let userAge = '';
+        
+        // Coletar parâmetros ao carregar a página
+        collectOriginalParams();
+        
+        // Navegação entre telas
+        function nextScreen(screenNumber) {
+            // Validações básicas
+            if (screenNumber === 3) {
+                userName = document.getElementById('userName').value.trim();
+                if (!userName || userName.length <= 3) {
+                    document.getElementById('nameError').style.display = 'block';
+                    return;
+                }
+            }
+            
+            if (screenNumber === 4) {
+                userAge = parseInt(document.getElementById('userAge').value);
+                if (isNaN(userAge) || userAge < 6) {
+                    document.getElementById('ageError').style.display = 'block';
+                    return;
+                }
+            }
+            
+            // Esconder todas as telas
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Mostrar tela atual
+            document.getElementById(`screen${screenNumber}`).classList.add('active');
+            
+            // Se for a tela de loading, iniciar
+            if (screenNumber === 4) {
+                startLoading();
+            }
+        }
+        
+        // Validação do nome
+        function validateName() {
+            userName = document.getElementById('userName').value.trim();
+            const error = document.getElementById('nameError');
+            
+            if (!userName || userName.length <= 3) {
+                error.style.display = 'block';
+                return false;
+            }
+            
+            error.style.display = 'none';
+            nextScreen(3);
+            return true;
+        }
+        
+        // Validação da idade
+        function validateAge() {
+            userAge = parseInt(document.getElementById('userAge').value);
+            const error = document.getElementById('ageError');
+            
+            if (isNaN(userAge) || userAge < 6) {
+                error.style.display = 'block';
+                return false;
+            }
+            
+            error.style.display = 'none';
+            nextScreen(4);
+            return true;
+        }
+        
+        // Simulação de loading
+        function startLoading() {
+            let progress = 0;
+            const percentageEl = document.getElementById('percentage');
+            const progressBar = document.getElementById('loadingProgress');
+            const loadingText = document.getElementById('loadingText');
+            
+            const interval = setInterval(() => {
+                progress += 1;
+                percentageEl.textContent = `${progress}%`;
+                progressBar.style.width = `${progress}%`;
+                
+                // Mensagens durante o loading
+                if (progress < 25) {
+                    loadingText.textContent = 'Processando...';
+                } else if (progress < 50) {
+                    loadingText.textContent = 'Preparando...';
+                } else if (progress < 75) {
+                    loadingText.textContent = 'Quase pronto...';
+                } else if (progress < 100) {
+                    loadingText.textContent = 'Finalizando...';
+                } else {
+                    loadingText.textContent = 'Redirecionando...';
+                    clearInterval(interval);
+                    
+                    // Gerar URL final APENAS com parâmetros originais
+                    const finalUrl = generateFinalUrl();
+                    
+                    console.log('URL final para TikTok tracking:', finalUrl);
+                    console.log('Parâmetros passados:', Array.from(originalParams.entries()));
+                    
+                    // Redirecionar
+                    setTimeout(() => {
+                        window.location.href = finalUrl;
+                    }, 800);
+                }
+            }, 30);
+        }
+        
+        // Permitir Enter para navegar
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('userName').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') validateName();
+            });
+            
+            document.getElementById('userAge').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') validateAge();
+            });
+            
+            // Validação em tempo real
+            document.getElementById('userName').addEventListener('input', function() {
+                const name = this.value.trim();
+                if (name && name.length > 3) {
+                    document.getElementById('nameError').style.display = 'none';
+                }
+            });
+            
+            document.getElementById('userAge').addEventListener('input', function() {
+                const age = parseInt(this.value);
+                if (!isNaN(age) && age >= 6) {
+                    document.getElementById('ageError').style.display = 'none';
+                }
+            });
+        });
+    </script>
+</head>
+</html>
