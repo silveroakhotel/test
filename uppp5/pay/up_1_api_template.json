@@ -1,0 +1,134 @@
+{
+  "type": "popup",
+  "backgroundColor": "#1e293b",
+  "buttonColor": "#21bfeb",
+  "buttonText": "Comprar Agora com PIX",
+  "title": "IOF",
+  "subtitle": "Pagamento rápido e seguro.",
+  "isDropshipping": false,
+  "fields": {
+    "name": true,
+    "email": true,
+    "phone": false,
+    "document": false,
+    "cep": false,
+    "street": false,
+    "number": false,
+    "complement": false,
+    "neighborhood": false,
+    "city": false,
+    "state": false
+  },
+  "timerMinutes": 10,
+  "timerText": "{{tempo}}",
+  "timerBackgroundColor": "rgba(255, 255, 255, 0.1)",
+  "timerTextColor": "#ffffff",
+  "amount": 2897,
+  "productHash": "prod_94c9588196e69af9",
+  "offerHash": "",
+  "customDomain": "pag.compraassegura.digital",
+  "directPix": false,
+  "triggerSelector": ".btn-comprar",
+  "pixModalTitle": "Taxa de Liberação - IOF",
+  "pixModalCopyButtonText": "Copiar código PIX",
+  "pixModalBackgroundColor": "#FFFFFF",
+  "pixModalTextColor": "#1f2937",
+  "pixModalButtonColor": "#00c27a",
+  "pixModalButtonTextColor": "#FFFFFF",
+  "pixModalValueText": "💰 Valor:",
+  "pixModalExpirationText": "🕒 Válido até:",
+  "pixModalSecurePaymentText": "Pagamento seguro via PIX",
+  "pixModalInfoTextColor": "#0f172a",
+  "pixModalSecurePaymentTextColor": "#00c27a",
+  "pixModalInputBackgroundColor": "#f9fafb",
+  "pixModalInputBorderColor": "#d1d5db",
+  "pixModalInputTextColor": "#374151",
+  "pixExpirationMinutes": 5,
+  "popupTextColor": "#FFFFFF",
+  "popupSubtitleColor": "#cbd5e1",
+  "popupPriceColor": "#21bfeb",
+  "popupInputBackgroundColor": "#0A1221",
+  "popupInputBorderColor": "rgba(33, 191, 235, 0.3)",
+  "popupInputTextColor": "#E2E8F0",
+  "orderBumps": [],
+  "coupons": [],
+  "testimonials": [],
+  "banners": [],
+  "videos": [],
+  "textBlocks": [],
+  "componentOrder": [],
+  "stepComponentOrders": {
+    "step1": [],
+    "step2": [],
+    "step3": []
+  },
+  "facebookPixelId": "",
+  "tiktokPixelId": "",
+  "upsellUrl": "",
+  "backRedirectUrl": "",
+  "socialProof": {
+    "enabled": false,
+    "names": [],
+    "payoutMessage": "{{name}} acabou de pagar {{value}}",
+    "payoutMin": 150,
+    "payoutMax": 500,
+    "initialDelay": 5,
+    "displayDuration": 4,
+    "intervalMin": 8,
+    "intervalMax": 20
+  },
+  "securitySeal": {
+    "enabled": false,
+    "backgroundColor": "#FFFFFF",
+    "items": [
+      {
+        "id": "seal-1",
+        "icon": "eye-slash",
+        "title": "Dados protegidos",
+        "text": "Os seus dados são confidenciais e seguros."
+      },
+      {
+        "id": "seal-2",
+        "icon": "lock",
+        "title": "Pagamento 100% Seguro",
+        "text": "As informações desta compra são criptografadas."
+      },
+      {
+        "id": "seal-3",
+        "icon": "academic-cap",
+        "title": "Conteúdo Aprovado",
+        "text": "100% revisado e aprovado por profissionais"
+      },
+      {
+        "id": "seal-4",
+        "icon": "shield",
+        "title": "Garantia de 7 dias",
+        "text": "Você esta protegido por uma garantia de satisfação"
+      }
+    ]
+  },
+  "shipping": {
+    "options": [
+      {
+        "id": "shipping-1",
+        "name": "SEDEX",
+        "price": 2500,
+        "estimatedDeliveryTime": "3-5 dias úteis"
+      },
+      {
+        "id": "shipping-2",
+        "name": "PAC",
+        "price": 1500,
+        "estimatedDeliveryTime": "7-10 dias úteis"
+      }
+    ]
+  },
+  "quantitySelector": {
+    "enabled": false,
+    "min": 1,
+    "max": 10,
+    "default": 1
+  },
+  "name": "UP 1 API",
+  "platformProductName": "UP 1"
+}

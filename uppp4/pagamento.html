@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento via PIX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cor-principal: #1DB954;
+      --cor-fundo: #FFFFFF;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--cor-fundo);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: var(--cor-fundo);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      text-align: center;
+      color: white;
+    }
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .seguro-badge {
+margin-top: 0.5rem;
+margin-bottom: 0.0rem;
+      background-color: #1DB954;
+      color: white;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 14px;
+      display: inline-block;
+    }
+.confirm-box {
+  background: #fff;
+  border: 2px dashed var(--cor-principal);
+  color: var(--cor-principal);
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  margin-top: 25px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+    .confirm-box strong {
+      color: var(--cor-principal);
+    }
+    #banner {
+      max-width: 100%;
+      border-radius: 8px;
+     margin-top: 0;
+  margin-bottom: 1.75rem;
+    }
+    .section-title {
+      color: var(--cor-principal);
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .qrcode-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .qrcode-container img {
+      max-width: 220px;
+    }
+    .input-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .input-group input {
+      width: 65%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-right: none;
+      border-radius: 6px 0 0 6px;
+      outline: none;
+      height: 35px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background: #fff;
+      box-sizing: border-box;
+    }
+    .copy-btn {
+      width: 25%;
+      background-color: var(--cor-principal);
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      height: 45px;
+      border: none;
+      border-radius: 0 6px 6px 0;
+      cursor: pointer;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .copy-btn.copied {
+      background-color: #2ecc71;
+    }
+    .payment-info {
+      border: 2px solid var(--cor-principal);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: left;
+      background: #fafafa;
+      color: #000;
+      margin-top: 1rem;
+    }
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .info-label {
+      font-weight: bold;
+    }
+    .warning {
+      color: #e74c3c;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+      }
+.countdown-container {
+  background: var(--cor-principal);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.countdown-title {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.timer span {
+  background-color: #000;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #00FF94;
+  min-width: 30px;
+  text-align: center;
+}
+
+
+    }
+#fixed-countdown-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-top {
+  background-color: var(--cor-principal);
+  color: white;
+  font-weight: bold;
+  padding: 8px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.countdown-bottom {
+  background-color: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0 10px;
+}
+
+.countdown-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 5px;
+}
+
+.countdown-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown-badge {
+  background-color: var(--cor-principal);
+  color: #FFF;
+  padding: 6px 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 20px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.countdown-sep {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  padding: 0 8px;
+}
+.pix-steps {
+  background-color: #FFF5E6;
+  color: #333;
+  padding: 1.2rem;
+  border: 1px solid #FF6B00;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.pix-steps h3 {
+  font-size: 16px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #FF6B00;
+  text-align: center;
+}
+.pix-step {
+  display: flex;
+  align-items: flex-start;
+text-align: left;
+  gap: 10px;
+  margin-bottom: 0.8rem;
+}
+.pix-step span {
+  background-color: #FF6B00;
+  color: #fff;
+  font-weight: bold;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  font-size: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+
+
+  </style>
+<!-- Meta Pixel Code -->
+
+<script>
+  async function gerarHash(valor) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(valor.trim().toLowerCase());
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+</script>
+
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+
+
+
+
+</script>
+<script>
+  const VALOR_PAGAMENTO = 950; // valor em centavos (ex: 3790 = R$ 37,90)
+</script>
+
+</head>
+<body>
+
+
+
+  <div class="container">
+    <div class="seguro-badge">🔒 Ambiente Seguro</div>
+    <div class="confirm-box" id="confirm-text">Gerando dados...</div>
+
+    <div id="loading-message" style="font-size: 16px; margin-top: 30px;">
+      <strong>Gerando QR Code...</strong>
+    </div>
+
+    <div id="conteudo-pix" style="display: none;">
+      <img id="banner" src="images/bannergerador.png?text=BANNER+PRODUTO" alt="Banner do Produto">
+      <div class="section-title">📱 Escaneie o QRCode abaixo</div>
+
+
+
+      <div class="qrcode-container">
+        <img id="qrcode-img" alt="QR Code PIX">
+      </div>
+      <div class="section-title">📋 Ou copie o código PIX</div>
+      <div class="input-group">
+        <input type="text" id="pix-code" readonly title="Carregando...">
+        <button type="button" class="copy-btn" id="copy-btn">Copiar</button>
+      </div>
+      <div class="payment-info">
+        <div class="info-item"><span class="info-label">🔥 Valor:</span><span id="VALOR_PAGAMENTO">R$ 0,00</span></div>
+        <div class="info-item"><span class="info-label">🕒 Válido até:</span><span id="expiration">--/--/---- --:--</span></div>
+      </div>
+
+
+   
+    </div>
+  </div>
+
+  <script>
+ const utms = new URLSearchParams(window.location.search);
+const utmObj = Object.fromEntries(utms.entries());
+
+
+    function gerarCPF() {
+      let cpf = '';
+      for (let i = 0; i < 9; i++) cpf += Math.floor(Math.random() * 10);
+      let soma = 0;
+      for (let i = 0; i < 9; i++) soma += parseInt(cpf.charAt(i)) * (10 - i);
+      let resto = 11 - (soma % 11);
+      cpf += (resto > 9 ? 0 : resto);
+      soma = 0;
+      for (let i = 0; i < 10; i++) soma += parseInt(cpf.charAt(i)) * (11 - i);
+      resto = 11 - (soma % 11);
+      cpf += (resto > 9 ? 0 : resto);
+      return cpf;
+    }
+
+    function gerarNomeCompleto() {
+      const nomes = ['Lucas', 'João', 'Mariana', 'Bruna', 'Carlos', 'Ana'];
+      const sobrenomes = ['Silva', 'Santos', 'Oliveira', 'Souza'];
+      return `${nomes[Math.floor(Math.random()*nomes.length)]} ${sobrenomes[Math.floor(Math.random()*sobrenomes.length)]}`;
+    }
+
+    function gerarTelefone() {
+      return `11${Math.floor(900000000 + Math.random() * 99999999)}`;
+    }
+
+    function gerarEmail(nome) {
+      return nome.toLowerCase().replace(/\s+/g, '') + Math.floor(Math.random()*1000) + '@gmail.com';
+    }
+
+async function verificarStatus(transactionHash) {
+  try {
+    const res = await fetch(`/Spotify/pix/verificar_status.php?hash=${transactionHash}`);
+    const data = await res.json();
+console.log("Resposta da API:", data);
+
+    if (data.payment_status === 'paid') {
+ console.log('Pagamento aprovado! Disparando pixel e redirecionando...');
+
+      clearInterval(window.__verificaStatusInterval__);
+
+
+
+const upsell6EventId = localStorage.getItem('event_id_upsell6');
+
+fbq('track', 'Purchase', {
+  value: VALOR_PAGAMENTO / 100,
+  currency: 'BRL'
+}, {
+  eventID: upsell6EventId
+});
+
+
+const utmsComString = new URLSearchParams(utmObj).toString();
+setTimeout(() => {
+  window.location.href = '../upsell7/index.html?' + utmsComString;
+}, 500);
+
+
+
+    }
+  } catch (e) {
+    console.error("Erro ao verificar status:", e);
+  }
+}
+
+
+
+    window.onload = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const nomeParam = urlParams.get("nome");
+  const emailParam = urlParams.get("email");
+
+  const nome = nomeParam && nomeParam.trim() !== "" ? nomeParam : gerarNomeCompleto();
+  const email = emailParam && emailParam.trim() !== "" ? emailParam : gerarEmail(nome);
+  const cpf = gerarCPF();
+  const telefoneParam = urlParams.get("telefone");
+const telefone = telefoneParam && /^\d{10,11}$/.test(telefoneParam)
+  ? telefoneParam
+  : gerarTelefone();
+
+  const utmObj = Object.fromEntries(urlParams.entries());
+
+(async () => {
+  const emHash = await gerarHash(email);
+  const fnHash = await gerarHash(nome.split(" ")[0]);
+  const lnHash = await gerarHash(nome.split(" ")[1] || "");
+  const phHash = await gerarHash(telefone);
+  const extHash = await gerarHash(cpf);
+  const nascimento = urlParams.get("nascimento");
+  const genero = urlParams.get("genero");
+  const dbHash = nascimento ? await gerarHash(nascimento) : undefined;
+  const geHash = genero ? await gerarHash(genero) : undefined;
+
+  // Captura IP
+  let ip = '';
+  try {
+    const ipRes = await fetch('https://api.ipify.org?format=json');
+    const ipData = await ipRes.json();
+    ip = ipData.ip;
+  } catch (e) {
+    console.warn("Erro ao capturar IP:", e);
+  }
+
+  const userAgent = navigator.userAgent;
+  const upsell6EventId = 'upsell6_' + Math.random().toString(36).substr(2, 9) + Date.now();
+localStorage.setItem('event_id_upsell6', upsell6EventId);
+
+
+  fbq('init', '1622834184984882', {
+    em: emHash,
+    fn: fnHash,
+    ln: lnHash,
+    ph: phHash,
+    external_id: extHash,
+    ...(dbHash && { db: dbHash }),
+    ...(geHash && { ge: geHash }),
+    ...(ip && { client_ip_address: ip }),
+    ...(userAgent && { client_user_agent: userAgent })
+  });
+
+  fbq('track', 'PageView');
+  fbq('track', 'InitiateCheckout', {
+    value: VALOR_PAGAMENTO / 100,
+    currency: 'BRL'
+  }, {
+    eventID: upsell6EventId
+  });
+})();
+
+
+if (nomeParam && emailParam) {
+  document.getElementById('confirm-text').innerHTML =
+    `Olá, <strong>${nome.split(" ")[0]}</strong>! Enviaremos seu acesso para <strong>${email}</strong> após a confirmação.`;
+} 
+console.log('UTMs:', utmObj);
+
+
+  fetch('/Spotify/pix/paradise.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: nome, email, cpf, phone: telefone, utm: utmObj, amount: VALOR_PAGAMENTO })
+  })
+  .then(res => res.json())
+  .then(data => {
+console.log("Resposta completa do geradormonster:", data);
+
+
+    if (!data.success) throw new Error(data.error || 'Erro ao gerar cobrança');
+
+    const qrText = data.pix_data.qrCodeText;
+    const qrImage = `https://quickchart.io/qr?text=${encodeURIComponent(qrText)}`;
+    const transactionHash = data.transaction_hash;
+if (!transactionHash) {
+  throw new Error("Hash da transação não recebido. Não é possível verificar status.");
+}
+
+    document.getElementById('qrcode-img').src = qrImage;
+    document.getElementById('pix-code').value = qrText;
+    document.getElementById('pix-code').title = qrText;
+    document.getElementById('VALOR_PAGAMENTO').textContent = (VALOR_PAGAMENTO / 100).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+    const expiration = new Date(Date.now() + 5 * 60 * 1000);
+    document.getElementById('expiration').textContent = expiration.toLocaleString("pt-BR");
+
+let remainingSeconds = 300;
+const fixedMin = document.getElementById('fixed-min');
+const fixedSec = document.getElementById('fixed-sec');
+
+const countdownInterval = setInterval(() => {
+  if (remainingSeconds <= 0) {
+    clearInterval(countdownInterval);
+    document.getElementById('fixed-countdown-bar').innerHTML = `
+      <div class="countdown-wrapper">
+        <div class="countdown-title">⏳ Sua última chance de descobrir a verdade...</div>
+      </div>
+    `;
+    return;
+  }
+
+  remainingSeconds--;
+  const minutes = String(Math.floor(remainingSeconds / 60)).padStart(2, '0');
+  const seconds = String(remainingSeconds % 60).padStart(2, '0');
+
+  fixedMin.textContent = minutes;
+  fixedSec.textContent = seconds;
+}, 1000);
+
+
+
+
+
+    document.getElementById('copy-btn').onclick = () => {
+      navigator.clipboard.writeText(qrText).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.textContent = 'Copiado!';
+        btn.classList.add("copied");
+        setTimeout(() => {
+          btn.textContent = 'Copiar';
+          btn.classList.remove("copied");
+        }, 2000);
+      });
+    };
+
+
+
+const confirmBox = document.getElementById('confirm-text');
+const loadingMsg = document.getElementById('loading-message');
+const conteudo = document.getElementById('conteudo-pix');
+const qrImageEl = document.getElementById('qrcode-img');
+
+
+qrImageEl.onload = () => {
+  conteudo.style.display = 'block';
+  conteudo.classList.add('fade-in');
+
+  confirmBox.style.display = 'none';
+  loadingMsg.style.display = 'none';
+};
+
+
+if (qrImageEl.complete) {
+  qrImageEl.onload();
+}
+
+
+
+
+    const vendaInfo = {
+      orderId: transactionHash,
+      platform: 'ParadisePagBR',
+      paymentMethod: 'pix',
+      status: 'paid',
+      createdAt: new Date().toISOString(),
+      approvedDate: new Date().toISOString(),
+      customer: {
+        name: nome,
+        email: email,
+        phone: telefone,
+        document: cpf,
+        country: 'BR'
+      },
+      products: [{
+        id: 'produto1',
+        name: 'Produto PIX',
+        quantity: 1,
+        priceInCents: VALOR_PAGAMENTO
+      }],
+      trackingParameters: utmObj,
+      commission: {
+        totalPriceInCents: VALOR_PAGAMENTO,
+        gatewayFeeInCents: 0,
+        userCommissionInCents: VALOR_PAGAMENTO
+      }
+    };
+
+    window.__verificaStatusInterval__ = setInterval(() => {
+      verificarStatus(transactionHash);
+    }, 2000);
+  })
+  .catch(err => {
+    document.getElementById('confirm-text').innerText = 'Erro ao gerar cobrança.';
+    console.error(err);
+  });
+};
+
+  </script>
+</body>
+</html>

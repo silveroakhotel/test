@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JP5N9ED3X"></script> 
+  <script> 
+    window.dataLayer = window.dataLayer || []; 
+    function gtag(){ dataLayer.push(arguments); } 
+    gtag('js', new Date()); 
+    gtag('config', 'G-4JP5N9ED3X'); 
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UP 4 - TikTok</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #ffffff;
+      color: #000000;
+      min-height: 100vh;
+      line-height: 1.4;
+    }
+
+    .tiktok-header {
+      width: 100%;
+      background: #ffffff;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .tiktok-logo {
+      height: 20px;
+    }
+
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .alert-banner {
+      background: linear-gradient(90deg, #ff0050, #ff2a6d);
+      color: white;
+      text-align: center;
+      padding: 10px 12px;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .main-content {
+      padding: 16px;
+    }
+
+    .success-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #00c853, #00e676);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: white;
+      font-size: 24px;
+    }
+
+    h1 {
+      color: #000000;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-align: center;
+      letter-spacing: -0.3px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #666666;
+      line-height: 1.4;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .description strong {
+      color: #000000;
+      font-weight: 600;
+    }
+
+    .cashback-card {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 16px;
+      margin: 16px 0;
+      border: 1px solid #e8e8e8;
+    }
+
+    .cashback-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ff0050;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 14px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .resumo-section {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #e8e8e8;
+    }
+
+    .resumo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      font-size: 12px;
+      color: #555;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .resumo-item:last-child {
+      border-bottom: none;
+    }
+
+    .resumo-valor {
+      font-weight: 600;
+      color: #ff0050;
+    }
+
+    .total-section {
+      background: #fff9fa;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ffebee;
+      text-align: center;
+    }
+
+    .total-label {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    .total-valor {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ff0050;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+      margin: 12px 0;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px;
+    }
+
+    .benefit-icon {
+      width: 18px;
+      height: 18px;
+      background: #00c853;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 9px;
+      flex-shrink: 0;
+    }
+
+    .benefit-text {
+      font-size: 12px;
+      color: #333;
+    }
+
+    .fee-section {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 12px 0;
+      border: 1px solid #e8e8e8;
+      text-align: center;
+    }
+
+    .fee-label {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    .fee-amount {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ff0050;
+      margin-bottom: 4px;
+    }
+
+    .fee-note {
+      font-size: 11px;
+      color: #888;
+    }
+
+    .tiktok-button {
+      width: 100%;
+      border: 0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(135deg, #00c853, #00e676);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+      margin: 12px 0 8px 0;
+    }
+
+    .tiktok-button:active {
+      transform: scale(0.98);
+    }
+
+    .timer {
+      text-align: center;
+      font-size: 11px;
+      color: #666;
+      font-weight: 500;
+      background: #f8f9fa;
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #e8e8e8;
+    }
+
+    .timer span {
+      color: #ff0050;
+      font-weight: 700;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 10px;
+      color: #888;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* Estilo para a explicação da taxa */
+    .tax-explanation {
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #e8e8e8;
+      font-size: 11px;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .tax-percentage {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ff0050;
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 700;
+      margin-right: 6px;
+    }
+
+    .simple-message {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin: 8px 0;
+      line-height: 1.4;
+    }
+
+    .highlight-box {
+      background: #fff9fa;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ffebee;
+      text-align: center;
+    }
+
+    .highlight-box .main-value {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ff0050;
+      margin: 4px 0;
+    }
+
+    .highlight-box .sub-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tiktok-header">
+    <img src="/unnamed copy copy.png" alt="TikTok Shop" class="tiktok-logo">
+  </div>
+
+  <div class="container">
+    <div class="alert-banner">
+      <i class="fas fa-bolt"></i> RECEBA SALDO + TAXAS DE VOLTA
+    </div>
+
+    <div class="main-content">
+      <div class="success-icon">
+        <i class="fas fa-coins"></i>
+      </div>
+
+      <h1>Receba Todo o Valor Completo</h1>
+      
+      <div class="description">
+        Pague apenas <strong>9%</strong> das taxas e receba <strong>R$ 647,79</strong> na sua conta!
+      </div>
+
+      <div class="cashback-card">
+        <div class="cashback-badge">
+          <i class="fas fa-undo-alt"></i>
+          VALOR TOTAL A RECEBER
+        </div>
+
+        <div class="highlight-box">
+          <div class="sub-value">Você vai receber:</div>
+          <div class="main-value">R$ 647,79</div>
+          <div class="fee-note">Pagando apenas 9% das taxas</div>
+        </div>
+
+        <div class="simple-message">
+          <span class="tax-percentage">9%</span>
+          Esta pequena taxa cobre os custos para liberar seu saldo completo + todas as taxas de volta.
+        </div>
+
+        <div class="fee-section">
+          <div class="fee-label">Valor a pagar agora:</div>
+          <div class="fee-amount">R$ 26,48</div>
+          <div class="fee-note">Único pagamento para receber R$ 647,79</div>
+        </div>
+
+        <a class="tiktok-button" href="https://blackdotik11.shop/tik/uppp3/pay/">
+          <i class="fas fa-wallet"></i>
+          RECEBER R$ 647,79 AGORA
+        </a>
+
+        <div class="timer">
+          <i class="fas fa-clock"></i> Oferta por: <span id="timer">06:00</span>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        Esta é sua última oportunidade de receber o valor completo com todas as taxas de volta.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Timer de 6 minutos
+    let duration = 6 * 60; // 6 minutos
+    let display = document.getElementById('timer');
+    const timer = setInterval(() => {
+      let minutes = Math.floor(duration / 60);
+      let seconds = duration % 60;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      display.textContent = minutes + ":" + seconds;
+      if (--duration < 0) {
+        clearInterval(timer);
+        display.textContent = "expirado";
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>

